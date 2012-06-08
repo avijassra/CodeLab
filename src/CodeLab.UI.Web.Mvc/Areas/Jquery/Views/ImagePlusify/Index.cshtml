@@ -1,0 +1,365 @@
+﻿@{
+    ViewBag.Title = "Image Plusify";
+    Layout = "~/Areas/Jquery/Views/Shared/_Layout.cshtml";
+}
+@section IncludeScripts
+{
+    <script src="@Microsoft.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/Include/Cache/Image.Plusify.Scripts")" type="text/javascript"></script>
+}
+<h2>
+    Image Plusify</h2>
+<div id="container">
+    <div id="plusifyPics">
+    </div>
+    <br />
+    <p>
+        <div dir="ltr" style="text-align: left;" trbidi="on">
+            <span style="font-family: Verdana, sans-serif;">I recently created new plugin to imitate
+                Google Plus photo album. I will try to explain briefly how to use this plugin.
+                For demo click <a href="http://jassra.com/Jquery/ImagePlusify" target="_blank">here</a>&nbsp;and
+                you can also download full and minified version over here.</span> <span style="font-family: Verdana, sans-serif;">
+                    To start with, include minified (for production) or full version (for development)
+                    in your page.</span> <span style="font-family: Verdana, sans-serif;"></span>
+            <div style="background-color: #dbe5f1; text-align: -webkit-auto; text-indent: 12px;">
+                <span style="font-family: Verdana, sans-serif; font-size: x-small; text-align: left;">
+                    &lt;script type=<span style="color: #990000;">"text/javascript"</span> src=<span
+                        style="color: #990000;">"<i>&lt;javascript folder path&gt;</i>/jquery.imagePlusify-2.1.min.js"</span>
+                    &gt;&lt;/script&gt;</span></div>
+                <small>(<i>New version of jquery.imagePlusify-2.1 has css animation for the browser supporting it currently. This update was include in 2.0 version on feb 24th, 2012.</i>)</small>
+                <br />
+            <span style="font-family: Verdana, sans-serif;"></span><span style="font-family: Verdana, sans-serif;">
+                Place your div with width and height where you want place your albums.</span>
+            <span style="font-family: Verdana, sans-serif;"></span>
+            <div style="text-align: -webkit-auto; text-indent: -2px;">
+            </div>
+            <div style="background-color: #dbe5f1; text-indent: 12px;">
+                <span style="font-family: Verdana, sans-serif; font-size: x-small;">&lt;div id='</span><span
+                    style="color: #990000; font-family: Verdana, sans-serif; font-size: x-small;">plusifyPics</span><span
+                        style="font-family: Verdana, sans-serif; font-size: x-small;">' &gt;&lt;/div&gt;</span></div>
+            <span style="font-family: Verdana, sans-serif;"></span><span style="font-family: Verdana, sans-serif;">
+                Remember to set style for the div. Set your width and height to cover the area where
+                you want to display your photo album.&nbsp;</span> <span style="font-family: Verdana, sans-serif;">
+                </span><span style="font-family: Verdana, sans-serif;">On document ready, initialize
+                    your imagePlusify and pass the options.</span> <span style="font-family: Verdana, sans-serif;">
+                    </span>
+            <div style="background-color: #dbe5f1; text-align: -webkit-auto; text-indent: 12px;">
+                <span style="font-family: Verdana, sans-serif; font-size: x-small;">$(</span><span
+                    style="color: blue; font-family: Verdana, sans-serif; font-size: x-small;">function</span><span
+                        style="font-family: Verdana, sans-serif; font-size: x-small;">&nbsp;()&nbsp;</span><span
+                            style="font-family: Verdana, sans-serif; font-size: x-small;">{</span></div>
+            <div style="background-color: #dbe5f1; text-align: -webkit-auto; text-indent: 12px;">
+                <span style="font-family: Verdana, sans-serif; font-size: x-small;">&nbsp; &nbsp; $.AjaxGet({</span></div>
+            <div style="background-color: #dbe5f1; text-align: -webkit-auto; text-indent: 12px;">
+                <span style="font-family: Verdana, sans-serif; font-size: x-small;">&nbsp; &nbsp; &nbsp;
+                    &nbsp; url: imgUrl,</span></div>
+            <div style="background-color: #dbe5f1; text-align: -webkit-auto; text-indent: 12px;">
+                <span style="font-family: Verdana, sans-serif; font-size: x-small;">&nbsp; &nbsp; &nbsp;
+                    &nbsp; callback:&nbsp;</span><span style="color: blue; font-family: Verdana, sans-serif;
+                        font-size: x-small;">function&nbsp;</span><span style="font-family: Verdana, sans-serif;
+                            font-size: x-small;">(</span><span style="font-family: Verdana, sans-serif; font-size: x-small;">data</span><span
+                                style="font-family: Verdana, sans-serif; font-size: x-small;">) {</span></div>
+            <div style="background-color: #dbe5f1; text-align: -webkit-auto; text-indent: 12px;">
+                <span style="font-family: Verdana, sans-serif; font-size: x-small;">&nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; $(</span><span style="color: #990000; font-family: Verdana, sans-serif;
+                        font-size: x-small;">'#plusifyPics'</span><span style="font-family: Verdana, sans-serif;
+                            font-size: x-small;">).imagePlusify({</span></div>
+            <div style="background-color: #dbe5f1; text-align: -webkit-auto; text-indent: 12px;">
+                <span style="font-family: Verdana, sans-serif; font-size: x-small;">&nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; backgroundColor: 'white',</span></div>
+            <div style="background-color: #dbe5f1; text-align: -webkit-auto; text-indent: 12px;">
+                <span style="font-family: Verdana, sans-serif; font-size: x-small;">&nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; source: data,</span></div>
+            <div style="background-color: #dbe5f1; text-align: -webkit-auto; text-indent: 12px;">
+                <span style="font-family: Verdana, sans-serif; font-size: x-small;">&nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; displayLabel: true,</span></div>
+            <div style="background-color: #dbe5f1; text-align: -webkit-auto; text-indent: 12px;">
+                <span style="font-family: Verdana, sans-serif; font-size: x-small;">&nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; onClick:&nbsp;</span><span style="color: blue;
+                        font-family: Verdana, sans-serif; font-size: x-small;">function</span><span style="font-family: Verdana, sans-serif;
+                            font-size: x-small;">&nbsp;(id, name, src) {</span></div>
+            <div style="background-color: #dbe5f1; text-align: -webkit-auto; text-indent: 12px;">
+                <span style="font-family: Verdana, sans-serif; font-size: x-small;">&nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; alert(</span><span style="color: #990000;
+                        font-family: Verdana, sans-serif; font-size: x-small;">'you have clicked on album
+                        with id: ['</span><span style="color: blue; font-family: Verdana, sans-serif; font-size: x-small;">&nbsp;</span><span
+                            style="font-family: Verdana, sans-serif; font-size: x-small;">+ id +</span><span
+                                style="color: blue; font-family: Verdana, sans-serif; font-size: x-small;">&nbsp;</span><span
+                                    style="color: #990000; font-family: Verdana, sans-serif; font-size: x-small;">']
+                                    with name "'</span><span style="color: blue; font-family: Verdana, sans-serif; font-size: x-small;">&nbsp;</span><span
+                                        style="font-family: Verdana, sans-serif; font-size: x-small;">+ name +</span><span
+                                            style="color: blue; font-family: Verdana, sans-serif; font-size: x-small;">&nbsp;</span><span
+                                                style="color: #990000; font-family: Verdana, sans-serif; font-size: x-small;">'"
+                                                and '&nbsp;</span><span style="font-family: Verdana, sans-serif; font-size: x-small;">+</span><span
+                                                    style="color: #990000; font-family: Verdana, sans-serif; font-size: x-small;">&nbsp;'it
+                                                    has total of '</span><span style="color: blue; font-family: Verdana, sans-serif;
+                                                        font-size: x-small;">&nbsp;</span><span style="font-family: Verdana, sans-serif;
+                                                            font-size: x-small;">+ src.length +</span><span style="color: #990000; font-family: Verdana, sans-serif;
+                                                                font-size: x-small;">' images !!!'</span><span style="font-family: Verdana, sans-serif;
+                                                                    font-size: x-small;">);</span></div>
+            <div style="background-color: #dbe5f1; text-align: -webkit-auto; text-indent: 12px;">
+                <span style="font-family: Verdana, sans-serif; font-size: x-small;">&nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span></div>
+            <div style="background-color: #dbe5f1; text-align: -webkit-auto; text-indent: 12px;">
+                <span style="font-family: Verdana, sans-serif; font-size: x-small;">&nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; });</span></div>
+            <div style="background-color: #dbe5f1; text-align: -webkit-auto; text-indent: 12px;">
+                <span style="font-family: Verdana, sans-serif; font-size: x-small;">&nbsp; &nbsp; &nbsp;
+                    &nbsp; }</span></div>
+            <div style="background-color: #dbe5f1; text-align: -webkit-auto; text-indent: 12px;">
+                <span style="font-family: Verdana, sans-serif; font-size: x-small;">&nbsp; &nbsp; });</span></div>
+            <div style="background-color: #dbe5f1; text-align: -webkit-auto; text-indent: 12px;">
+                <span style="font-family: Verdana, sans-serif; font-size: x-small;">});</span></div>
+            Here is the list of all the options we can set in this plugin.
+        </div>
+    </p>
+    <table class="infotable" id="table-design" style="border: 1px solid black;">
+        <thead style="background-color: silver; text-align: center;">
+            <tr>
+                <th>
+                    Property
+                </th>
+                <th>
+                    Values
+                </th>
+                <th>
+                    Additional Info
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <div>
+                        border</div>
+                </td>
+                <td>
+                    <div>
+                        valid css border style</div>
+                </td>
+                <td>
+                    <div>
+                        '1px solid gray' is default value</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        borderOnMouseOver</div>
+                </td>
+                <td>
+                    <div>
+                        valid css border style</div>
+                </td>
+                <td>
+                    <div>
+                        '1px solid black' is default value</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        padding</div>
+                </td>
+                <td>
+                    <div>
+                        valid css padding size</div>
+                </td>
+                <td>
+                    <div>
+                        '5px' is default value</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        backgroundColor</div>
+                </td>
+                <td>
+                    <div>
+                        valid css color</div>
+                </td>
+                <td>
+                    <div>
+                        &nbsp;'#fff' is default value</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        displayLabel</div>
+                </td>
+                <td>
+                    <div>
+                        true / false</div>
+                </td>
+                <td>
+                    <div>
+                        by default its false</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        labelColor</div>
+                </td>
+                <td>
+                    <div>
+                        valid css color for the text color</div>
+                </td>
+                <td>
+                    <div>
+                        '#000' is default value</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        randomize</div>
+                </td>
+                <td>
+                    <div>
+                        true / false</div>
+                </td>
+                <td>
+                    <div>
+                        by default its true</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        margin</div>
+                </td>
+                <td>
+                    <div>
+                        margin between the image albums</div>
+                </td>
+                <td>
+                    <div>
+                        '30px' is the default value</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        width</div>
+                </td>
+                <td>
+                    <div>
+                        album width</div>
+                </td>
+                <td>
+                    <div>
+                        '200px' is the default width</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        height</div>
+                </td>
+                <td>
+                    <div>
+                        album height</div>
+                </td>
+                <td>
+                    <div>
+                        '200px' is the default height</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        slideBy</div>
+                </td>
+                <td>
+                    <div>
+                        int distance by which images should slide</div>
+                </td>
+                <td>
+                    <div>
+                        30 is the default value</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        rotateBy</div>
+                </td>
+                <td>
+                    <div>
+                        int angle by which image should rotate</div>
+                </td>
+                <td>
+                    <div>
+                        7 is the default value</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        cssAnimationTurnedOn</div>
+                </td>
+                <td>
+                    <div>
+                        true / false</div>
+                </td>
+                <td>
+                    <div>
+                        if you want to use sliding out of images without css animation then it should be turned off. by default its true.</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        animateDuration</div>
+                </td>
+                <td>
+                    <div>
+                        float number for animation time duraton</div>
+                </td>
+                <td>
+                    <div>
+                            this is only vaild for css animation. default value for this is 0.75</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        source</div>
+                </td>
+                <td>
+                    <div>
+                        images, name and id as source to display image albums</div>
+                </td>
+                <td>
+                    <div>
+                        source can be sent in 3 ways 1. Array of string where string is url of images 2.
+                        Object with id, name and array of string as members 3 Array of object where object
+                        has id, name and array of string as members</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        onClick</div>
+                </td>
+                <td>
+                    <div>
+                        Callback event raised on click of album</div>
+                </td>
+                <td>
+                    <div>
+                        album id, album name and all images url as array are returned in the callback function.</div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p>
+        Download full and minified version from <a class="download" href="@Url.Content("~/Downloads/jquery.imagePlusify-2.1.rar")">
+            here</a>
+    </p>
+</div>
+<script type="text/javascript">
+    var imgUrl = '@Url.Action(MVC.Jquery.ImagePlusify.GetImagesAndDesc())';
+</script>

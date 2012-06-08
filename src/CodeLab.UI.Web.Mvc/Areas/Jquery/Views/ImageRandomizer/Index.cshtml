@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Image Randomizer";
+    Layout = "~/Areas/Jquery/Views/Shared/_Layout.cshtml";
+}
+
+@section IncludeScripts
+{
+    <script src="@Microsoft.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/Include/Cache/Image.Randomizer.Scripts")" type="text/javascript"></script>
+}
+
+<h2>Image Randomizer</h2>
+
+<div id="container">
+    <div id="randomPics" ></div>
+</div>

@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="@Microsoft.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/Include/Cache/Jquery.Common.Style")" rel="stylesheet" type="text/css" />
+    @RenderSection("IncludeStyles", false)
+    <title>@ViewBag.Title</title>
+</head>
+
+<body>
+    <header>
+        <div id="headerLayout">
+            <div id="mainTopMenu">
+                @Html.Partial(MVC.Html5.Shared.Views.TopMenu)          
+            </div>
+        </div>
+        <div id="headerBreak"></div>
+    </header>
+    <div id="mainLayout">
+        <div id="main">
+            <div id="demoLeftNavigation">
+                @Html.Partial(MVC.Jquery.Shared.Views.LeftNavigation)
+            </div>
+            <div id="container">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script src="@Microsoft.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/Include/Cache/MainApp.Common.Scripts")" type="text/javascript"></script>
+@RenderSection("IncludeScripts", false)

@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "Image Rotator Sample";
+    Layout = "~/Areas/Jquery/Views/Shared/_SampleLayout.cshtml";
+}
+
+@section IncludeScripts
+{
+    <script src="@Microsoft.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/Include/Cache/Image.Rotator.Try.It.Scripts")" type="text/javascript"></script>
+}
+
+<h2>Image Rotator</h2>
+
+<div id="sampleContainer">
+    <div class="row">
+        <div class="leftColumn">
+            <div class="row">
+                @Html.ActionLink("Back", MVC.Jquery.ImageRotator.Index())
+            </div>
+            <div class="row">
+                <p>
+                    Feel free to change option values to evaluate different behavioural affects of the image rotator plugin
+                </p>
+            </div>
+            <div class="row codeSnipet">
+                $('#tripPics').imageRotator({
+                 <div class="indent">
+                    border:<span id="borderVal" contenteditable="true">1px solid black</span>,<br />
+                    backgroundColor:<span id="backgroundColorVal" contenteditable="true">white</span>,<br />
+                    barColor:<span id="barColorVal" contenteditable="true">black</span>,<br />
+                    infoBarAtTop:<span id="infoBarAtTopVal" contenteditable="true">false</span>,<br />
+                    mergeOnChange:<span id="mergeOnChangeVal" contenteditable="true">true</span>,<br />
+                    displayAutoRotate:<span id="displayAutoRotateVal" contenteditable="true">false</span>,<br />
+                    autoRotateTimer:<span id="autoRotateTimerVal" contenteditable="true">5000</span>,<br />
+                    rotationSpeed:<span id="rotationSpeedVal" contenteditable="true">1500</span>,<br />
+                    previousText:<span id="previousTextVal" contenteditable="true"> < </span>,<br />
+                    nextText:<span id="nextTextVal" contenteditable="true"> > </span>,<br />
+                 </div>
+                });
+            </div>
+            <div class="row centerAlign">
+                <button id="loadImageRotator" >Reload</button>
+            </div>
+        </div>
+        <div class="rightColumn">
+            <div id="rotatorPics"></div>
+        </div>
+    </div>
+    <div class="row">
+        <p>Download full and minified version from <a href="@Url.Content("~/Downloads/jquery.imageRotator-1.4.rar")">here</a></p>
+    </div>
+</div>
+
+<script type="text/javascript" >
+    var imgUrl = '@Url.Action(MVC.Jquery.ImageRotator.GetImagesAndDesc())';
+</script>

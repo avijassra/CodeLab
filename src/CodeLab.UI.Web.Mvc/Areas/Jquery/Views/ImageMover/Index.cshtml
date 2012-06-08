@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Title = "Image Mover";
+    Layout = "~/Areas/Jquery/Views/Shared/_Layout.cshtml";
+}
+
+@section IncludeScripts
+{
+    <script src="@Microsoft.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/Include/Cache/Image.BgMover.Scripts")" type="text/javascript"></script>
+}
+
+<h2>Image Mover</h2>
+
+<div id="container">
+    <div class="bgMover"></div>
+
+    <div style="display: inline-block;">
+        <div id="movingPic" style="position:relative; width:600px;overflow: hidden;border:1px solid black;">
+            <img id="movingPic_img"  src="/Areas/Jquery/Include/Images/Malibu/DSC_1184_wide.JPG" alt="" style="width:800px; height:400px;margin:-100px;position:relative;">
+        </div>
+    </div>
+    <br /><br />
+    <div>
+        <table style="width:600px">
+            <tr>
+                <td style="width:175px">Mouse position</td>
+                <td id="mousePosition"></td>
+            </tr>
+            <tr>
+                <td style="width:175px">Pic container position</td>
+                <td id="contPosition"></td>
+            </tr>
+            <tr>
+                <td style="width:175px">Pic position</td>
+                <td id="picPosition"></td>
+            </tr>
+            <tr>
+                <td style="width:175px">Container Dimesnions</td>
+                <td id="contDimensions"></td>
+            </tr>
+            <tr>
+                <td style="width:175px">Enter Position</td>
+                <td id="mouseEnterPosition"></td>
+            </tr>
+            <tr>
+                <td style="width:175px">New Pic Position</td>
+                <td id="newPicPosition"></td>
+            </tr>
+            <tr>
+                <td style="width:175px">Width Details</td>
+                <td id="widthDetails"></td>
+            </tr>
+            <tr>
+                <td style="width:175px">Height Details</td>
+                <td id="heightDetails"></td>
+            </tr>
+            <tr>
+                <td style="width:175px">Mouse directions</td>
+                <td id="mouseDirection"></td>
+            </tr>
+        </table>
+    </div>
+</div>

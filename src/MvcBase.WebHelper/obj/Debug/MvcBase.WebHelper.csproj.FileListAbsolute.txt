@@ -1,0 +1,40 @@
+C:\Avi\TheCoder\My Projects\MyBillShare\MvcBase.WebHelper\obj\Debug\MvcBase.WebHelper.csprojResolveAssemblyReference.cache
+C:\Avi\TheCoder\My Projects\MyBillShare\MvcBase.WebHelper\bin\Debug\MvcBase.WebHelper.dll
+C:\Avi\TheCoder\My Projects\MyBillShare\MvcBase.WebHelper\bin\Debug\MvcBase.WebHelper.pdb
+C:\Avi\TheCoder\My Projects\MyBillShare\MvcBase.WebHelper\bin\Debug\EcmaScript.NET.modified.dll
+C:\Avi\TheCoder\My Projects\MyBillShare\MvcBase.WebHelper\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Avi\TheCoder\My Projects\MyBillShare\MvcBase.WebHelper\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
+C:\Avi\TheCoder\My Projects\MyBillShare\MvcBase.WebHelper\bin\Debug\Microsoft.Practices.Unity.dll
+C:\Avi\TheCoder\My Projects\MyBillShare\MvcBase.WebHelper\bin\Debug\Microsoft.Web.Optimization.dll
+C:\Avi\TheCoder\My Projects\MyBillShare\MvcBase.WebHelper\bin\Debug\Yahoo.Yui.Compressor.dll
+C:\Avi\TheCoder\My Projects\MyBillShare\MvcBase.WebHelper\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\Avi\TheCoder\My Projects\MyBillShare\MvcBase.WebHelper\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+C:\Avi\TheCoder\My Projects\MyBillShare\MvcBase.WebHelper\bin\Debug\Microsoft.Practices.Unity.xml
+C:\Avi\TheCoder\My Projects\MyBillShare\MvcBase.WebHelper\bin\Debug\Microsoft.Practices.Unity.Configuration.xml
+C:\Avi\TheCoder\My Projects\MyBillShare\MvcBase.WebHelper\obj\Debug\MvcBase.WebHelper.dll
+C:\Avi\TheCoder\My Projects\MyBillShare\MvcBase.WebHelper\obj\Debug\MvcBase.WebHelper.pdb
+C:\Projects\Git\CACloud\Presentation Layer\MvcBase.WebHelper\bin\Debug\MvcBase.WebHelper.dll
+C:\Projects\Git\CACloud\Presentation Layer\MvcBase.WebHelper\bin\Debug\MvcBase.WebHelper.pdb
+C:\Projects\Git\CACloud\Presentation Layer\MvcBase.WebHelper\bin\Debug\EcmaScript.NET.modified.dll
+C:\Projects\Git\CACloud\Presentation Layer\MvcBase.WebHelper\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Projects\Git\CACloud\Presentation Layer\MvcBase.WebHelper\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
+C:\Projects\Git\CACloud\Presentation Layer\MvcBase.WebHelper\bin\Debug\Microsoft.Practices.Unity.dll
+C:\Projects\Git\CACloud\Presentation Layer\MvcBase.WebHelper\bin\Debug\Microsoft.Web.Optimization.dll
+C:\Projects\Git\CACloud\Presentation Layer\MvcBase.WebHelper\bin\Debug\Yahoo.Yui.Compressor.dll
+C:\Projects\Git\CACloud\Presentation Layer\MvcBase.WebHelper\obj\Debug\MvcBase.WebHelper.dll
+C:\Projects\Git\CACloud\Presentation Layer\MvcBase.WebHelper\obj\Debug\MvcBase.WebHelper.pdb
+C:\Projects\Git\CACloud\Presentation Layer\MvcBase.WebHelper\obj\Debug\MvcBase.WebHelper.csprojResolveAssemblyReference.cache
+C:\Projects\Git\CodeLab\src\MvcBase.WebHelper\bin\Debug\MvcBase.WebHelper.dll
+C:\Projects\Git\CodeLab\src\MvcBase.WebHelper\bin\Debug\MvcBase.WebHelper.pdb
+C:\Projects\Git\CodeLab\src\MvcBase.WebHelper\bin\Debug\EcmaScript.NET.modified.dll
+C:\Projects\Git\CodeLab\src\MvcBase.WebHelper\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Projects\Git\CodeLab\src\MvcBase.WebHelper\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
+C:\Projects\Git\CodeLab\src\MvcBase.WebHelper\bin\Debug\Microsoft.Practices.Unity.dll
+C:\Projects\Git\CodeLab\src\MvcBase.WebHelper\bin\Debug\Microsoft.Web.Optimization.dll
+C:\Projects\Git\CodeLab\src\MvcBase.WebHelper\bin\Debug\Yahoo.Yui.Compressor.dll
+C:\Projects\Git\CodeLab\src\MvcBase.WebHelper\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\Projects\Git\CodeLab\src\MvcBase.WebHelper\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+C:\Projects\Git\CodeLab\src\MvcBase.WebHelper\bin\Debug\Microsoft.Practices.Unity.xml
+C:\Projects\Git\CodeLab\src\MvcBase.WebHelper\bin\Debug\Microsoft.Practices.Unity.Configuration.xml
+C:\Projects\Git\CodeLab\src\MvcBase.WebHelper\obj\Debug\MvcBase.WebHelper.dll
+C:\Projects\Git\CodeLab\src\MvcBase.WebHelper\obj\Debug\MvcBase.WebHelper.pdb

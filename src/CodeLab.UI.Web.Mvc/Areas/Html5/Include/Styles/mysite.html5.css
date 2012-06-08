@@ -1,0 +1,59 @@
+/************************************************************************************
+Geolocation
+************************************************************************************/
+div#map_canvas
+{
+    height:350px;
+    width:500px;
+    border:1px solid #efefef;
+    margin:auto;
+    -moz-box-shadow:5px 5px 10px #000;
+    -webkit-box-shadow:5px 5px 10px #000;
+	position:static;
+}
+
+/************************************************************************************
+Server-Sent Events
+************************************************************************************/
+
+div#userInfoList
+{
+	margin: 0 Auto;
+	width: 400px;
+	background-color: #fff;
+	color:#000;
+}
+
+div.userInfo
+{
+	border:1px Solid #A0A0A0;
+	padding:5px;
+}
+
+div.is_online
+{
+	font-weight:bold;
+}
+
+div.is_online:after
+{
+	font-weight:bold;
+	content: "*";
+	color:Green;
+}
+
+div#eventMenu
+{
+	padding:10px;
+	background-color: #DBDBDB;
+	font-size:1.2em;
+	border: 1px Solid #DBDBDB;
+}
+
+span.loginTimestamp
+{
+	font-weight:normal;
+	float:right;
+	font-size:.8em;
+	color:Gray;
+}

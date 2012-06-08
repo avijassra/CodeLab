@@ -1,0 +1,84 @@
+/************************************************************************************
+Samples common
+************************************************************************************/
+div.row
+{
+	display:inline-block;
+	width:100%;
+	min-height:25px;
+}
+
+div.leftColumn
+{
+	float:left;
+	min-height:25px;
+	padding: 3px 5px;
+	width:48%;
+	margin: auto 0;
+}
+
+div.rightColumn
+{
+	float:right;
+	min-height:25px;
+	padding: 3px 5px;
+	width:48%;
+}
+
+div.leftMiddleColumn
+{
+	float:left;
+	min-height:25px;
+	padding: 3px 5px;
+	width:33%;
+}
+
+div.middleColumn
+{
+	float:left;
+	min-height:25px;
+	padding: 3px 5px;
+	width:33%;
+}
+
+div.rightMiddleColumn
+{
+	float:right;
+	min-height:25px;
+	padding: 3px 5px;
+	width:33%;
+}
+
+.textbox
+{
+	border: 1px solid black;
+}
+
+.codeSnipet
+{
+	border:1px solid #ADADAD;
+	background-color:#EEEEEE;
+	border-radius: 10px;
+	padding:20px;
+}
+
+.indent
+{
+	padding-left:20px;
+}
+
+.centerAlign
+{
+	margin:0px auto;
+}
+
+
+/************************************************************************************
+Image Rotator
+************************************************************************************/
+div#rotatorPics
+{
+	width:400px;
+	height:400px;
+	margin:auto;
+}

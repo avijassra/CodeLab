@@ -1,0 +1,39 @@
+﻿@model IEnumerable<CodeLab.UI.Web.Mvc.Areas.Html5.ViewModels.ServerSentEvent.UserViewModel>
+
+@{
+    ViewBag.Title = "Admin Section for Server Sent Events";
+    Layout = "~/Areas/Html5/Views/Shared/_Layout.cshtml";
+}
+
+@section IncludeScripts
+{
+    <script src="@Microsoft.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/Include/Cache/ServerSentAdmin.Scripts")" type="text/javascript"></script>
+}
+
+<h2>Admin Section for the server sent examples</h2>
+
+<div id="eventMenu">
+    @Html.ActionLink("User", MVC.Html5.User.Index())
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    @Html.ActionLink("Admin", MVC.Html5.Admin.Index())
+</div>
+
+<div id="userInfoList">
+    <input id="actionOnAllBtn" type="button" value="Select All" />
+
+    @foreach (var item in Model)
+    {
+        var cssClass = string.Format("userInfo {0}", item.IsOnline ? "is_online" : "");
+        
+        <div class="@cssClass" >
+            @Html.CheckBox(item.Id.ToString(), item.IsOnline, new { @class = "jqOnlineUser", id = item.Id.ToString() })
+            &nbsp;&nbsp;&nbsp;
+            @item.Name
+        </div>
+    }
+</div>
+    
+<script type="text/javascript" >
+    var userStatusChangeUrl = "@Url.Action(MVC.Html5.Admin.UserStatusChange())";
+    var actionOnAllUrl = "@Url.Action(MVC.Html5.Admin.ActionOnAll())";
+</script>

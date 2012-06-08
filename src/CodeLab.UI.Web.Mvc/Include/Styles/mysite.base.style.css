@@ -1,0 +1,103 @@
+body
+{
+	font-size: .85em;
+    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+    color: #232323;
+    background-color: #fff;
+    background-repeat:repeat;
+}
+
+header
+{
+	background-image: url('../Images/background.png');
+	border-bottom: 4px Solid #808080;
+	margin:-7px;
+}
+
+#headerLayout
+{
+	min-width:600px;
+	max-width:850px;
+	margin: Auto;
+}
+
+#headerBreak
+{
+	height:4px;
+	background-color:#FF6A00;
+	width:100%;
+}
+
+#mainLayout
+{
+	min-width:600px;
+	max-width:850px;
+	min-height: 600px;
+	max-height: 600px;
+	margin: 0 Auto;
+}
+
+#mainTopMenu
+{
+	height:75px;
+	position:relative;
+}
+
+#topMenuLogo
+{
+	width:200px;
+	min-height:65px;
+	float:left;
+	background-image: url('../Images/logo.avijassra.png');
+}
+
+.fbLikeLink
+{
+	float:left;
+	
+}
+
+div#topNavigationLinks
+{
+	float:right;
+	min-height:65px;
+	margin-top: 25px;
+}
+
+div#topNavigationLinks ul
+{
+	vertical-align:bottom;
+}
+
+div#topNavigationLinks ul li
+{
+	display:inline;
+	padding: 5px;
+}
+
+div#topNavigationLinks ul li a:link,
+div#topNavigationLinks ul li a:visited,
+div#topNavigationLinks ul li a:hover,
+div#topNavigationLinks ul li a:active
+{
+	color:#FF6A00;
+	font-weight:bold;
+	font-size:1.2em;
+	text-decoration:none;
+}
+
+p
+{
+	padding:5px;
+	color:Gray;
+}
+
+ul#demoCategories li a:link,
+ul#demoCategories li a:visited,
+ul#demoCategories li a:hover,
+ul#demoCategories li a:active
+{
+	color:Gray;
+	font-weight:bold;
+	font-size:1.0em;
+}
