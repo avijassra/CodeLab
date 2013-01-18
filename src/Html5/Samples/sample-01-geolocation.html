@@ -1,0 +1,44 @@
+﻿<! DOCTYPE HTML>
+<html>
+	<head>
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Sample - Geolcation</title>
+	</head>
+	<body style="margin:0px; padding:0px;">
+		<div id="map_canvas" style="width:100%; height:100%; float:left; border:1px solid black;" ></div>
+		<script  src="http://maps.google.com/maps/api/js?sensor=true" type="text/javascript"></script>
+		<script src="../lib/jquery-1.7.min.js"></script>
+		<script>
+			$(function() {
+				var you = {},
+					map = {},
+				    gps, latLng, mapOpts, infoWin, mapDiv;
+					
+				if (navigator.geolocation) {
+				    function hasPosition(position) {
+				        var point = new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
+
+                        myOptions = {
+                            zoom: 15,
+                            center: point,
+                            mapTypeId: google.maps.MapTypeId.ROADMAP
+                        },
+
+                        mapDiv = document.getElementById("map_canvas"),
+                        map = new google.maps.Map(mapDiv, myOptions),
+
+                        marker = new google.maps.Marker({
+                            position: point,
+                            map: map,
+                            title: "You are here"
+                        });
+				    }
+				    navigator.geolocation.getCurrentPosition(hasPosition);
+				} else {
+				    alert("your browser does not support HTML5 geolocation api");
+				}
+			});
+		</script>
+	</body>
+</html>
