@@ -59,11 +59,13 @@
 			
 			function bindWindowKeyDownEvent() {
 				// window enter key event binding
-				window.addEventListener('keydown', function(e) {
-					if (e.keyCode === 13) {
-						validateAndPlay();
-					}
-				}, false);
+				window.addEventListener('keydown', enterKeyAxn, false);
+			}
+			
+			function enterKeyAxn(e) {
+				if (e.keyCode === 13) {
+					validateAndPlay();
+				}
 			}
 			
 			function validateAndPlay() {
@@ -100,7 +102,7 @@
 				
 				output.innerHTML = text;
 				guessBtn.setAttribute('disabled', 'disabled');
-				window.removeEventListener('keydown');
+				window.removeEventListener('keydown', enterKeyAxn, false);
 			}
 			
 			function stringFormat() {
