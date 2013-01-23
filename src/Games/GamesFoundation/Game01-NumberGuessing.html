@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>Game 01 - Number Guessing</title>
+	</head>
+	<body>
+		<div id="output">I am thinking of a number between 0 and 99.</div>
+		<input id="input" type="text" placeholder="Enter your guess...">
+		<button id="guess">guess</button>
+		<button id="restart">restart</button>
+
+		<script type="text/javascript">
+			// variables
+			var mysteryNumber = 50,
+				playersGuess = 0,
+				allowedAttempts = 10,
+				usedAttempts = 0,
+				input = document.querySelector('#input'),
+				output = document.querySelector('#output'),
+				guessBtn = document.querySelector('#guess'),
+				restartBtn = document.querySelector('#restart'),
+				msg = '<span>{0}</span><br ><span>Attempts made: {1} | Attempts left: {2}</span>';
+				
+			// button cursor style
+			guessBtn.style.cursor = "pointer";
+			restartBtn.style.cursor = "pointer";
+			
+			// guess button event binding
+			guessBtn.addEventListener('click', function(e) {
+				playGame();
+			}, false);
+				
+			function playGame() {
+				playersGuess = parseInt(input.value);
+				usedAttempts++;
+				
+				if (playersGuess === mysteryNumber) {
+					output.innerHTML = "<span><p style='font-weight:bold;color:Green;display:inline;'>You got it !!!</p></span><br ><span>Unused attempts: " + (allowedAttempts - usedAttempts) + "</span>";
+				} else {
+					if (usedAttempts === allowedAttempts) {
+							output.innerHTML = "<span>You have used all the " + allowedAttempts + " attempts to guess the number. </span><br ><span>You have <p style='font-weight:bold;color:Red;display:inline;'>failed</p></span>";
+							guessBtn.setAttribute('disabled', 'disabled');
+					} else {
+						if(playersGuess > mysteryNumber) {
+							output.innerHTML = stringFormat(msg, "Too high", usedAttempts, (allowedAttempts - usedAttempts));
+						} else {
+							output.innerHTML = stringFormat(msg, "Too low", usedAttempts, (allowedAttempts - usedAttempts));
+						}
+					}
+				}
+			}
+			
+			// restart button event binding
+			restart.addEventListener('click', function(e) {
+				if (confirm("Are you sure !!!")) {
+					usedAttempts = 0;
+					output.innerText = "I am thinking of a number between 0 and 99.";
+					input.value = "";
+				}
+			}, false);
+			
+			function stringFormat() {
+				var str = arguments[0];
+			
+				if (arguments.length > 1) {
+					for (var i = 1, j = 0; i < arguments.length; i++, j++) {
+						while (str.indexOf('{' + j + '}') >= 0) {
+							str = str.replace('{' + j + '}', arguments[i]);
+						}
+					}
+				}
+				return str;
+			}
+		</script>
+	</body>
+</html>
