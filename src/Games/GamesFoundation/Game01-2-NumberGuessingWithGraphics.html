@@ -6,39 +6,67 @@
 		<title>Game 01 - Number Guessing</title>
 		<style type="text/css">
 
-		#stage
-		{
-			width: 600px;
-			height: 100px;
-			position: relative;
-		}
-
-		#scale
-		{
-			background: url(images/g-01-2-with-graphics.png) no-repeat top left;
-			position: absolute;
-			top: 0px;
-			left: 0px;
-			background-position: 0 -101px; 
-			width: 600px; 
-			height: 100px;
-		}
-
-		#arrow
-		{
-			background: url(images/g-01-2-with-graphics.png) no-repeat top left;
-			position: absolute;
-			top: 0px;
-			left: -25px;
-			background-position: 0 0; 
-			width: 51px; 
-			height: 51px;
+			#guess
+			{
+				-webkit-border-radius:10px;
+				background:-webkit-linear-gradient(top, #a3a3a3, #000);
+				color: white;
+				height: 25px;
+			}
 			
-			/*Transition*/
-			-webkit-transition: left 0.5s ease-out 0s;
-			-moz-transition: left 0.5s ease-out 0s;
-			transition: left 0.5s ease-out 0s;
-		}
+			#guess:hover
+			{
+				background:-webkit-linear-gradient(top, #ffff00, #c9c900);
+				color: white;
+			}
+			
+			#guess:active
+			{
+				background:-webkit-linear-gradient(top, #cccc00, #ffff00);
+				color: white;
+			}
+			
+			#restart
+			{
+				-webkit-border-radius:10px;
+				background:-webkit-linear-gradient(top, #cc0000, #ff0000);
+				color: white;
+				height: 25px;
+			}
+			
+			#stage
+			{
+				width: 600px;
+				height: 100px;
+				position: relative;
+			}
+
+			#scale
+			{
+				background: url(images/g-01-2-with-graphics.png) no-repeat top left;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				background-position: 0 -101px; 
+				width: 600px; 
+				height: 100px;
+			}
+
+			#arrow
+			{
+				background: url(images/g-01-2-with-graphics.png) no-repeat top left;
+				position: absolute;
+				top: 0px;
+				left: -21px;
+				background-position: 0 0; 
+				width: 51px; 
+				height: 51px;
+				
+				/*Transition*/
+				-webkit-transition: left 0.5s ease-out 0s;
+				-moz-transition: left 0.5s ease-out 0s;
+				transition: left 0.5s ease-out 0s;
+			}
 
 		</style>
 	</head>
@@ -115,7 +143,7 @@
 			}
 			
 			function render() {
-				arrow.style.left = ((playersGuess * 6) - 25) + 'px';
+				arrow.style.left = ((playersGuess * 6) - 21) + 'px';
 			}
 			
 			function validateAndPlay() {
