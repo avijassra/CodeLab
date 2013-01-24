@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>Game 01 - Number Guessing</title>
+		<style type="text/css">
+
+		#stage
+		{
+			width: 600px;
+			height: 100px;
+			position: relative;
+		}
+
+		#scale
+		{
+			background: url(images/g-01-2-with-graphics.png) no-repeat top left;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			background-position: 0 -101px; 
+			width: 600px; 
+			height: 100px;
+		}
+
+		#arrow
+		{
+			background: url(images/g-01-2-with-graphics.png) no-repeat top left;
+			position: absolute;
+			top: 0px;
+			left: -25px;
+			background-position: 0 0; 
+			width: 51px; 
+			height: 51px;
+			
+			/*Transition*/
+			-webkit-transition: left 0.5s ease-out 0s;
+			-moz-transition: left 0.5s ease-out 0s;
+			transition: left 0.5s ease-out 0s;
+		}
+
+		</style>
+	</head>
+	<body>
+		<div id="stage">
+			<div id="scale"></div>
+			<div id="arrow"></div>
+		</div>
+		<div>
+			<div id="output">I am thinking of a number between 0 and 99.</div>
+			<input id="input" type="text" placeholder="Enter your guess..." autofocus>
+			<button id="guess">guess</button>
+			<button id="restart">restart</button>
+		</div>
+		
+		<script type="text/javascript">
+			// variables
+			var mysteryNumber = Math.floor(Math.random() * 100),
+				playersGuess = 0,
+				allowedAttempts = 10,
+				usedAttempts = 0,
+				arrow = document.querySelector('#arrow'),
+				input = document.querySelector('#input'),
+				output = document.querySelector('#output'),
+				guessBtn = document.querySelector('#guess'),
+				restartBtn = document.querySelector('#restart'),
+				msg = '<span>{0}</span><br ><span>Attempts made: {1} | Attempts left: {2}</span>';
+				
+			// button cursor style
+			guessBtn.style.cursor = "pointer";
+			restartBtn.style.cursor = "pointer";
+			
+			// window enter key event binding
+			bindWindowKeyDownEvent();
+			
+			// guess button event binding
+			guessBtn.addEventListener('click', function(e) {
+				validateAndPlay();
+			}, false);
+			
+			// restart button event binding
+			restart.addEventListener('click', function(e) {
+				var disabled = guessBtn.getAttribute('disabled'),
+					proceed = true;
+				
+				if(disabled !== 'disabled') {
+					proceed = confirm('Are you SURE !!!');
+				}
+				
+				if (proceed) {
+					startNewGame();
+				}
+			}, false);
+			
+			function startNewGame() {
+				usedAttempts = 0;
+				output.innerText = "I am thinking of a number between 0 and 99.";
+				input.value = "";
+				playersGuess = 0;
+				guessBtn.removeAttribute('disabled');
+				bindWindowKeyDownEvent();
+				render();
+			}
+			
+			function bindWindowKeyDownEvent() {
+				// window enter key event binding
+				window.addEventListener('keydown', enterKeyAxn, false);
+			}
+			
+			function enterKeyAxn(e) {
+				if (e.keyCode === 13) {
+					validateAndPlay();
+				}
+			}
+			
+			function render() {
+				arrow.style.left = ((playersGuess * 6) - 25) + 'px';
+			}
+			
+			function validateAndPlay() {
+				playersGuess = parseInt(input.value);
+				if (isNaN(playersGuess)) {
+					alert('Please enter only numeric values');
+				} else {
+					playGame();
+				}
+			}
+				
+			function playGame() {
+				usedAttempts++;
+				
+				if (usedAttempts === allowedAttempts || playersGuess === mysteryNumber) { 
+					endGame();
+				} else {
+					if(playersGuess > mysteryNumber) {
+						output.innerHTML = stringFormat(msg, "Too high", usedAttempts, (allowedAttempts - usedAttempts));
+					} else {
+						output.innerHTML = stringFormat(msg, "Too low", usedAttempts, (allowedAttempts - usedAttempts));
+					}
+				}
+				render();
+			}
+			
+			function endGame() {
+				var text;
+				
+				if (playersGuess === mysteryNumber) {
+					text = "<span><p style='font-weight:bold;color:Green;display:inline;'>You got it !!!</p></span><br ><span>With " + (allowedAttempts - usedAttempts) + " of attempts left</span>";
+				} else {
+					text = "<span>You have used all the " + allowedAttempts + " attempts to guess the number. </span><br ><span>The mystery number was<p style='font-weight:bold;color:Red;display:inline;'>" + mysteryNumber + "</p></span>";
+				}
+				
+				output.innerHTML = text;
+				guessBtn.setAttribute('disabled', 'disabled');
+				window.removeEventListener('keydown', enterKeyAxn, false);
+			}
+			
+			function stringFormat() {
+				var str = arguments[0];
+			
+				if (arguments.length > 1) {
+					for (var i = 1, j = 0; i < arguments.length; i++, j++) {
+						while (str.indexOf('{' + j + '}') >= 0) {
+							str = str.replace('{' + j + '}', arguments[i]);
+						}
+					}
+				}
+				return str;
+			}
+		</script>
+	</body>
+</html>
