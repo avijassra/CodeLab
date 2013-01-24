@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>Game 01 - Alien Attack</title>
+		<style type="text/css">
+			#stage
+			{
+				width: 600px;
+				height: 600px;
+				position: relative;
+			}
+			
+			#background
+			{
+				background: url(images/g-01-3-with-alien-attack.png) no-repeat top left;
+				background-position: 0 -85px; 
+				width: 600px;
+				height: 600px;
+				position: absolute;
+				z-index: -2;
+			}
+			
+			#plane
+			{
+				background: url(images/g-01-3-with-alien-attack.png) no-repeat top left;
+				background-position: 0 0; 
+				width: 35px; 
+				height: 35px;
+				top: 560px;
+				left: 282.5px;
+				z-index: 2;
+				position: absolute;
+				
+				/*Transition*/
+				-webkit-transition: left 0.2s ease-out 0s;
+				-moz-transition: left 0.2s ease-out 0s;
+				transition: left 0.2s ease-out 0s;
+			}
+			
+			#spaceship
+			{
+				background: url(images/g-01-3-with-alien-attack.png) no-repeat top left;
+				background-position: 0 -800px; 
+				width: 35px; 
+				height: 35px;
+				top: 0px;
+				left: 282.5px;
+				z-index: 1;
+				position: absolute;
+			}
+			
+			#bullet
+			{
+				background: url(images/g-01-3-with-alien-attack.png) no-repeat top left;
+				background-position: 0 -735px; 
+				width: 15px; 
+				height: 15px;
+				top: 575px;
+				left: 292.5px;
+				z-index: 1;
+				position: absolute;
+				
+				/*Transition*/
+				-webkit-transition: top 0.5s ease-out 0s;
+				-moz-transition: top 0.5s ease-out 0s;
+				transition: top 0.5s ease-out 0s;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="stage">
+			<div id="background"></div>
+			<div id="plane"></div>
+			<div id="bullet"></div>
+			<div id="spaceship"></div>
+		</div>
+		
+		<script type="text/javascript">
+			// variables
+			var mysteryNumber = Math.floor(Math.random() * 100),
+				plane = document.querySelector('#plane'),
+				bullet = document.querySelector('#bullet');
+			
+			// event binding
+			window.addEventListener('keydown', keydownHandler, false);
+
+			function keydownHandler(e) {
+				if(e.keyCode === 32) {
+					bullet.style.top = '0px';
+				} else if (e.keyCode === 37) {
+					var currLeft = 
+				} else if (e.keyCode === 39) {
+				}
+			}
+			
+		</script>
+	</body>
+</html>
