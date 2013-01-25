@@ -42,13 +42,19 @@
 			#spaceship
 			{
 				background: url(images/g-01-3-with-alien-attack.png) no-repeat top left;
-				background-position: 0 -800px; 
+				background-position: 0 -882px; 
 				width: 35px; 
 				height: 35px;
 				top: 0px;
 				left: 282.5px;
 				z-index: 1;
 				position: absolute;
+				opacity: 1;
+				
+				/*Transition*/
+				-webkit-transition: opacity  0.1s ease-out 0.3s;
+				-moz-transition: opacity  0.1s ease-out 0.3s;
+				transition: opacity  0.1s ease-out 0.3s;
 			}
 			
 			#bullet
@@ -61,11 +67,41 @@
 				left: 292.5px;
 				z-index: 1;
 				position: absolute;
+				opacity: 0;
 				
 				/*Transition*/
-				-webkit-transition: top 0.5s ease-out 0s;
-				-moz-transition: top 0.5s ease-out 0s;
-				transition: top 0.5s ease-out 0s;
+				-webkit-transition: top  0.3s ease-out 0.3s;
+				-moz-transition: top  0.3s ease-out 0.3s;
+				transition: top  0.3s ease-out 0.3s;
+				-webkit-transition: opacity  0.3s ease-out 0s;
+				-moz-transition: opacity  0.3s ease-out 0s;
+				transition: opacity  0.3s ease-out 0s;
+			}
+			
+			#explosion
+			{
+				background: url(images/g-01-3-with-alien-attack.png) no-repeat top left;
+				background-position: 0 -800px; 
+				width: 32px; 
+				height: 32px;
+				top: 0px;
+				left: 282.5px;
+				z-index: 2;
+				position: absolute;
+				opacity: 0;
+				
+				/*Transition*/
+				-webkit-transition: top  0.3s ease-out 0.3s;
+				-moz-transition: top  0.3s ease-out 0.3s;
+				transition: top  0.3s ease-out 0.3s;
+				-webkit-transition: opacity  0.3s ease-out 0s;
+				-moz-transition: opacity  0.3s ease-out 0s;
+				transition: opacity  0.3s ease-out 0s;
+			}
+			
+			.blast
+			{
+				opacity: 0 !important;
 			}
 		</style>
 	</head>
@@ -75,24 +111,190 @@
 			<div id="plane"></div>
 			<div id="bullet"></div>
 			<div id="spaceship"></div>
+			<div id="explosion"></div>
+		</div>
+		
+		<div>
+			<div id="output">I am thinking of a number between 0 and 99.</div>
+			<input id="inputX" type="text" placeholder="X..." autofocus>
+			<input id="inputY" type="text" placeholder="Y...">
+			<button id="fire">fire</button>
+			<button id="restart">restart</button>
 		</div>
 		
 		<script type="text/javascript">
 			// variables
-			var mysteryNumber = Math.floor(Math.random() * 100),
+			var spaceshipX = Math.floor(Math.random() * 565), 
+				spaceshipY = Math.floor(Math.random() * 300),
+				playersXGuess = 0,
+				playersYGuess = 0,
+				allowedAttempts = 10,
+				usedAttempts = 0,
+				defLeft = 282.5,
+				spaceship = document.querySelector('#spaceship'),
 				plane = document.querySelector('#plane'),
-				bullet = document.querySelector('#bullet');
+				bullet = document.querySelector('#bullet'),
+				explosion = document.querySelector('#explosion'),
+				inputX = document.querySelector('#inputX'),
+				inputY = document.querySelector('#inputY'),
+				output = document.querySelector('#output'),
+				fireBtn = document.querySelector('#fire'),
+				restartBtn = document.querySelector('#restart'),
+				msg = '<span>{0}</span><span>Attempts made: {1} | Attempts left: {2}</span>';
 			
-			// event binding
-			window.addEventListener('keydown', keydownHandler, false);
-
-			function keydownHandler(e) {
-				if(e.keyCode === 32) {
-					bullet.style.top = '0px';
-				} else if (e.keyCode === 37) {
-					var currLeft = 
-				} else if (e.keyCode === 39) {
+			renderSpaceship();
+			
+			// button cursor style
+			fireBtn.style.cursor = "pointer";
+			restartBtn.style.cursor = "pointer";
+			
+			// window enter key event binding
+			bindWindowKeyDownEvent();
+			
+			// guess button event binding
+			fireBtn.addEventListener('click', function(e) {
+				validateAndPlay();
+			}, false);
+			
+			function bindWindowKeyDownEvent() {
+				// window enter key event binding
+				window.addEventListener('keydown', enterKeyAxn, false);
+			}
+			
+			// restart button event binding
+			restart.addEventListener('click', function(e) {
+				var disabled = fireBtn.getAttribute('disabled'),
+					proceed = true;
+				
+				if(disabled !== 'disabled') {
+					proceed = confirm('Are you SURE !!!');
 				}
+				
+				if (proceed) {
+					startNewGame();
+				}
+			}, false);
+			
+			function startNewGame() {
+				usedAttempts = 0;
+				output.innerText = "I am thinking of a number between 0 and 99.";
+				inputX.value = "";
+				inputY.value = "";
+				playersXGuess = 0;
+				playersYGuess = 0;
+				fireBtn.removeAttribute('disabled');
+				bindWindowKeyDownEvent();
+				renderSpaceship();
+				renderPlane(true);
+			}
+			
+			function enterKeyAxn(e) {
+				if (e.keyCode === 13) {
+					validateAndPlay();
+				}
+			}
+			
+			function renderSpaceship(x, y) {
+				if (x && y) {
+					// random position
+					spaceshipX = x;
+					spaceshipY = y;
+				}
+				// setup spaceship position
+				spaceship.style.left = spaceshipX + 'px';
+				spaceship.style.top = spaceshipY + 'px';
+			}
+			
+			function renderPlane(toDef) {
+				if (toDef) {
+					// random position
+					playersXGuess = defLeft;
+				}
+				// setup spaceship position
+				plane.style.left = playersXGuess + 'px';
+			}
+			
+			function fireBullet() {
+				explosion.style.opacity = 1;
+				explosion.style.top = playersYGuess + 'px';
+				explosion.style.left = playersXGuess + 'px';
+			}
+			
+			function validateAndPlay() {
+				playersXGuess = parseInt(inputX.value);
+				playersYGuess = parseInt(inputY.value);
+				if (isNaN(playersXGuess) || isNaN(playersYGuess)) {
+					alert('Please enter only numeric values');
+				} else {
+					playGame();
+				}
+			}
+				
+			function playGame() {
+				usedAttempts++;
+				
+				if (usedAttempts === allowedAttempts || hitCheck()) { 
+					endGame();
+				} else {
+				
+					var text = "";
+				
+					if (playersXGuess < spaceshipX) {
+						text = 'Too left';
+					} else if (playersXGuess > spaceshipX) {
+						text = 'Too right';
+					} 
+					
+					if (playersYGuess < spaceshipX) {
+						text += (text ? ' & ' : '') + 'Too high';
+					} else if (playersYGuess > spaceshipX) {
+						text += (text ? ' & ' : '') + 'Too low';
+					}
+					
+					output.innerHTML = stringFormat(msg, text, usedAttempts, (allowedAttempts - usedAttempts));
+				}
+				inputX.select();
+				renderSpaceship();
+				renderPlane();
+				fireBullet();
+			}
+			
+			function hitCheck() {
+				if (playersXGuess >= spaceshipX && playersXGuess <= spaceshipX + 35) {
+					if (playersYGuess >= spaceshipY && playersYGuess <= spaceshipY + 35) {
+						return true;
+					}
+				}
+				
+				return false
+			}
+			
+			function endGame() {
+				var text;
+				
+				if (hitCheck()) {
+					spaceship.className = "blast";
+					text = "<span><p style='font-weight:bold;color:Green;display:inline;'>You got it !!!</p></span><span>With " + (allowedAttempts - usedAttempts) + " of attempts left</span>";
+				} else {
+					text = "<span>You have used all the " + allowedAttempts + " bullets to hit the space ship. </span><span>The current location of space ship is<p style='font-weight:bold;color:Red;display:inline;'> x: " + spaceshipX + " | y: " + spaceshipY + "</p></span>";
+				}
+				
+				output.innerHTML = text;
+				fireBtn.setAttribute('disabled', 'disabled');
+				window.removeEventListener('keydown', enterKeyAxn, false);
+			}
+			
+			function stringFormat() {
+				var str = arguments[0];
+			
+				if (arguments.length > 1) {
+					for (var i = 1, j = 0; i < arguments.length; i++, j++) {
+						while (str.indexOf('{' + j + '}') >= 0) {
+							str = str.replace('{' + j + '}', arguments[i]);
+						}
+					}
+				}
+				return str;
 			}
 			
 		</script>
