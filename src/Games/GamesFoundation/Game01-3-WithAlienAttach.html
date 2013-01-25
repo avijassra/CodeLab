@@ -184,8 +184,11 @@
 				playersYGuess = 0;
 				fireBtn.removeAttribute('disabled');
 				bindWindowKeyDownEvent();
-				renderSpaceship();
+				inputX.select();
+				renderSpaceship(Math.floor(Math.random() * 565), Math.floor(Math.random() * 300));
 				renderPlane(true);
+				spaceship.className = '';
+				explosion.style.opacity = 0;
 			}
 			
 			function enterKeyAxn(e) {
@@ -211,7 +214,7 @@
 					playersXGuess = defLeft;
 				}
 				// setup spaceship position
-				plane.style.left = playersXGuess + 'px';
+				plane.style.left = (playersXGuess - 17.5) + 'px';
 			}
 			
 			function fireBullet() {
@@ -260,8 +263,8 @@
 			}
 			
 			function hitCheck() {
-				if (playersXGuess >= spaceshipX && playersXGuess <= spaceshipX + 35) {
-					if (playersYGuess >= spaceshipY && playersYGuess <= spaceshipY + 35) {
+				if ((playersXGuess + 16)  >= spaceshipX && (playersXGuess + 16) <= spaceshipX + 35) {
+					if ((playersYGuess + 16) >= spaceshipY && (playersYGuess + 16) <= spaceshipY + 35) {
 						return true;
 					}
 				}
