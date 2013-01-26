@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>Game 02 - Lyrica</title>
+	</head>
+	<body>
+		<div>
+			<div id="mapLocation"></div>
+			<input id="direction" type="text" placeholder="Path..." autofocus>
+			<button id="enter">Enter</button>
+		</div>
+		
+		<script type="text/javascript">
+			// variables
+			var map = [[], [], []],
+				locX = Math.floor(Math.random() * 3),
+				locY = Math.floor(Math.random() * 3),
+				mapLoc = document.querySelector('#mapLocation'),
+				direction = document.querySelector('#direction'),
+				enterBtn = document.querySelector('#enter');
+				
+			// create map
+			map[0][0] = "An old stone keep.";
+			map[0][1] = "A deep well.";
+			map[0][2] = "A sunny glade.";
+			map[1][0] = "A sleeping dragon.";
+			map[1][1] = "A narrow pathway.";
+			map[1][2] = "An ancient gate.";
+			map[2][0] = "The edge of a river.";
+			map[2][1] = "A lonely wooden bench.";
+			map[2][2] = "An isolated cottage. Faint music comes from inside.";
+			
+			mapLoc.innerText = map[locY][locX]
+			
+			// binding event
+			enterBtn.addEventListener('click', changeLocation, false);
+			window.addEventListener('keydown', keyDownHandler, false);
+			
+			function keyDownHandler(e) {
+				if (e.keyCode === 13) {
+					changeLocation(e);
+				}
+			}
+			
+			function changeLocation(e) {
+				var direc = direction.value.toLowerCase();
+				
+				if (direc === 'east') {
+					if(locX === 2) {
+						alert('no place to go');
+					} else {
+						locX++;
+					}
+				} else if (direc === 'south') {
+					if(locY === 2) {
+						alert('no place to go');
+					} else {
+						locY++;
+					}
+				} else if (direc === 'west') {
+					if(locX === 0) {
+						alert('no place to go');
+					} else {
+						locX--;
+					}
+				} else if (direc === 'north') {
+					if(locY === 0) {
+						alert('no place to go');
+					} else {
+						locY--;
+					}
+				} else {
+					alert('invalid keyword');
+					return;
+				}
+				
+				mapLoc.innerText = map[locY][locX];
+				direction.select();
+			}
+		</script>
+	</body>
+</html>
