@@ -23,22 +23,24 @@
 #splash-screen
 {
 	text-align: center;
-	padding-top: 100px;
+	padding-top: 5em;
 }
 
 #splash-screen .continue
 {
+	padding-top: 2em;
 	cursor: pointer;
-	font-size: 25px;
+	font-size: 1.25em;
 }
 
 .logo
 {
 	font-family: "Elsie-Regular";
-	font-size: 60px;
+	font-size: 4.0em;
+	line-height: 1.5em;
 	font-weight: bold;
 	margin: 0;
 	text-align: center;
 	color: rgb(70, 120, 20);
-	text-shadow: 1px 1px 2px rgb(255, 255, 0), -1px -1px 2px rgb(255, 255, 0), 5px 8px 8px rgb(0, 0, 0);
+	text-shadow: 0.03em 0.03em 0.03em rgb(255, 255, 0), -0.03em -0.03em 0.03em rgb(255, 255, 0), 0.10em 0.15em 0.15em rgb(0, 0,  0);
 }
