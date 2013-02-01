@@ -84,7 +84,11 @@ jewel.board = (function() {
 			left = 0, 
 			right = 0,
 			up = 0,
-			down = 0;
+			down = 0,
+			leftUp = 0, 
+			leftDown = 0,
+			rightUp = 0,
+			rightDown = 0;
 			
 			// look right
 			while (jewelType === getJewel(x + right + 1, y)) {
@@ -106,8 +110,28 @@ jewel.board = (function() {
 				down++;
 			}
 			
+			// look left up
+			while (jewelType === getJewel(x - leftUp - 1, y - leftUp - 1)) {
+				leftUp++;
+			}
+			
+			// look left down
+			while (jewelType === getJewel(x - leftDown - 1, y + leftDown + 1)) {
+				leftDown++;
+			}
+			
+			// look right up
+			while (jewelType === getJewel(x + rightUp + 1, y - rightUp - 1)) {
+				rightUp++;
+			}
+			
+			// look right down
+			while (jewelType === getJewel(x + rightDown + 1, y + rightDown + 1)) {
+				rightDown++;
+			}
+						
 			// returns the number of jewels in the chain
-			return Math.max(left + 1 + right, up + 1 + down);
+			return Math.max(left + 1 + right, up + 1 + down, leftUp + 1 + rightDown, leftDown + 1 + rightUp);
 	}
 	
 	// returns true if (x1, y1) is adjacent to (x2, y2)
@@ -250,10 +274,14 @@ jewel.board = (function() {
 	
 	// return true id (x, y) is a valid postion and if the jewel at (x, y) can be swapped with a neighor
 	function canJewelMove(x, y) {
-		return ((x > 0 && canSwap(x, y, x-1, y)) ||
-			(x < cols -1 && canSwap(x, y, x+1, y)) ||
-			(y > 0 && canSwap(x, y, x , y-1)) ||
-			(y < rows -1 && canSwap(x, y, x, y+1)));
+		return ((x > 0 && canSwap(x, y, x-1, y)) || // checking left
+			(x < cols -1 && canSwap(x, y, x+1, y)) || // checking right
+			(y > 0 && canSwap(x, y, x , y-1)) || // checking up
+			(y < rows -1 && canSwap(x, y, x, y+1)) || // checking down
+			(x > 0 && y > 0 && canSwap(x, y, x-1, y-1)) || // checking left up
+			(x > 0 && y < rows -1 && canSwap(x, y, x-1, y+1)) || // checking left down
+			(x < cols -1 && y > 0 && canSwap(x, y, x+1 , y-1)) || // checking right up
+			(x < cols -1 && y < rows -1 && canSwap(x, y, x+1, y+1)));
 	}
 	
 	// creates a copy of jewel board

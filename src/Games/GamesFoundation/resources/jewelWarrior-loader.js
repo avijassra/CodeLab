@@ -1,10 +1,10 @@
 var jewel = {
 	screens: {},
 	setting: {
-		rows: 6,
-		cols: 6,
+		rows: 8,
+		cols: 8,
 		baseScore: 100,
-		numJewelTypes: 5
+		numJewelTypes: 7
 	}
 };
 // wait until main document is loaded
