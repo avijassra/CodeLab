@@ -51,7 +51,6 @@ jewel.board = (function () {
 		return {
 			initialize: initialize,
 			swap: swap,
-			getBoard: getBoard,
 			print: print
 		};
 })();

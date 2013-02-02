@@ -12,9 +12,8 @@ Modernizr.addTest("standalone", function() {
 	return (window.navigator.standalone != false);
 });
 
-...
 // extend yepnope with preloading
-yepnope.addPrefix(“preload”, function(resource) {
+yepnope.addPrefix("preload", function(resource) {
 	resource.noexec = true;
 	return resource;
 });
