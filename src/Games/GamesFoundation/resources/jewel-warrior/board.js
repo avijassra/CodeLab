@@ -8,7 +8,7 @@ jewel.board = (function() {
 		
 	// initialize board game
 	function initialize(callback) {
-		opts = jewel.setting;
+		opts = jewel.settings;
 		numJewelTypes = opts.numJewelTypes;
 		baseScore = opts.baseScore;
 		cols = opts.cols;
