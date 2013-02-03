@@ -5,17 +5,36 @@
 		<title>Canvae - Hello World</title>
 	</head>
 	<body>
-		<canvas id="canvas" width="600" height="600"></canvas>
+		<canvas id="canvas" width="1000" height="1000"></canvas>
 		<script>
 			var canvas = document.getElementById('canvas'),
+				// create a 2D context object
 				ctx = canvas.getContext('2d');
-			// create a 2D context object
-			ctx;
+			
+			function makeClippingPath() {
+				// make a star-shaped clipping path
+				ctx.beginPath();
+				ctx.moveTo(270,600);
+				for (var i=0;i<=20;i++) {
+					ctx.lineTo(200 + Math.cos(i/10 * Math.PI) * 70 * (i%2 + 1),
+						600 + Math.sin(i/10 * Math.PI) * 70 * (i%2 + 1));
+				} 
+				ctx.clip();
+			}
+			
+			// LINE
 			ctx.beginPath();
+			ctx.moveTo(400, 25);
+			ctx.lineTo(600, 25);
+			
+			
+			// SHAPE BY LINE
 			ctx.moveTo(75, 25);
 			ctx.lineTo(25, 125);
 			ctx.lineTo(125, 125);
 			
+			
+			// RECT
 			ctx.moveTo(25, 150);
 			ctx.fillStyle = 'red';
 			ctx.fillRect(25, 151, 100, 100);
@@ -30,6 +49,7 @@
 			ctx.lineWidth = 2.0;
 			ctx.stroke();
 			
+			// ARC
 			ctx.moveTo(200 + 50, 200);
 			ctx.arc(200, 200, 50, 0, 2 * Math.PI, false);
 			ctx.moveTo(200 + 70, 200);
@@ -37,6 +57,47 @@
 			ctx.lineWidth = 2;
 			ctx.strokeStyle = "black";
 			ctx.stroke();
+			
+			// QUADRATIC CURVE TO
+			ctx.beginPath();
+			ctx.moveTo(300,200);
+			ctx.quadraticCurveTo(675,25,700,200);
+			ctx.fillStyle = 'rgba(150,50,100,0.5)';
+			ctx.fill();
+			ctx.stroke();
+			// draw control point
+			ctx.strokeStyle = ctx.fillStyle = 'rgba(0,0,0,0.5)';
+			
+			// BEZIER CURVE TO
+			ctx.beginPath();
+			ctx.moveTo(300,300);
+			ctx.bezierCurveTo(400,100,600,500,700,300);
+			ctx.fillStyle = 'rgba(150,50,100,0.5)';
+			ctx.fill();
+			ctx.stroke();
+			// draw control points
+			ctx.strokeStyle = ctx.fillStyle = 'rgba(0,0,0,0.5)';
+			
+			// CLIPPING
+			ctx.beginPath();
+			var linGrad = ctx.createLinearGradient(0, 400, 800, 800);
+			linGrad.addColorStop(0, 'white');
+			linGrad.addColorStop(0.15, 'yellow');
+			linGrad.addColorStop(0.35, 'orange');
+			linGrad.addColorStop(0.60, 'red');
+			ctx.fillStyle = linGrad;
+			//ctx.translate(50, 100);
+			ctx.rotate(90);
+			ctx.fillRect(0, 400, 400, 400);
+			
+			ctx.beginPath();
+			makeClippingPath();
+			var radGrad = ctx.createRadialGradient(200, 600, 25, 200, 600, 55);
+			radGrad.addColorStop(0, 'white');
+			radGrad.addColorStop(0.5, 'yellow');
+			radGrad.addColorStop(1, 'orange');
+			ctx.fillStyle = radGrad;
+			ctx.fillRect(0, 400, 400, 400);
 			
 			ctx.closePath();
 		</script>
