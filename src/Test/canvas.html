@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8">
+		<title>Canvae - Hello World</title>
+	</head>
+	<body>
+		<canvas id="canvas" width="600" height="600"></canvas>
+		<script>
+			var canvas = document.getElementById('canvas'),
+				ctx = canvas.getContext('2d');
+			// create a 2D context object
+			ctx;
+			ctx.beginPath();
+			ctx.moveTo(75, 25);
+			ctx.lineTo(25, 125);
+			ctx.lineTo(125, 125);
+			
+			ctx.moveTo(25, 150);
+			ctx.fillStyle = 'red';
+			ctx.fillRect(25, 151, 100, 100);
+			ctx.strokeStyle = 'black';
+			ctx.strokeRect(25, 150, 100, 100);
+			// light green fill color
+			ctx.fillStyle = '#aaeeaa';
+			ctx.fill();
+			// dark blue stroke color
+			ctx.strokeStyle = '#111155';
+			// thicker stroke
+			ctx.lineWidth = 2.0;
+			ctx.stroke();
+			
+			ctx.moveTo(200 + 50, 200);
+			ctx.arc(200, 200, 50, 0, 2 * Math.PI, false);
+			ctx.moveTo(200 + 70, 200);
+			ctx.arc(200, 200, 70, 0, 2 * Math.PI, false);
+			ctx.lineWidth = 2;
+			ctx.strokeStyle = "black";
+			ctx.stroke();
+			
+			ctx.closePath();
+		</script>
+	</body>
+</html>
