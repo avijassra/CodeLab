@@ -87,15 +87,15 @@
 			linGrad.addColorStop(0.60, 'red');
 			ctx.fillStyle = linGrad;
 			//ctx.translate(50, 100);
-			ctx.rotate(90);
+			//ctx.rotate(90);
 			ctx.fillRect(0, 400, 400, 400);
-			
-			ctx.beginPath();
+			//ctx.beginPath();
 			makeClippingPath();
-			var radGrad = ctx.createRadialGradient(200, 600, 25, 200, 600, 55);
-			radGrad.addColorStop(0, 'white');
-			radGrad.addColorStop(0.5, 'yellow');
-			radGrad.addColorStop(1, 'orange');
+			var radGrad = ctx.createRadialGradient(200, 600, 1, 200, 600, 65);
+			//radGrad.addColorStop(0.1, 'white');
+			radGrad.addColorStop(0.1, 'yellow');
+			radGrad.addColorStop(0.9, 'orange');
+			//radGrad.addColorStop(1, 'orange');
 			ctx.fillStyle = radGrad;
 			ctx.fillRect(0, 400, 400, 400);
 			
