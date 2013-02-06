@@ -90,3 +90,70 @@ ul.menu li button:active
 	color : rgb(255,255,0);
 	background : rgb(30,40,0);
 }
+
+.jewel-size 
+{
+	font-size : 40px;
+} 
+
+#jewel-proto 
+{ 
+	position : absolute;
+	width : 1em;
+	height : 1em;
+	left: -1000px;
+}
+
+#splash-screen .continue
+{
+	cursor: pointer;
+	font-size: 0.75em;
+	display: none;
+}
+
+
+/* Progress bar */
+.progress 
+{
+	margin: 0 auto;
+	width: 6em;
+	height: 0.5em;
+	border-radius: 0.5em;
+	overflow: hidden;
+	border: 1px solid rgb(200,200,100);
+} 
+
+.progress .indicator 
+{
+	background-color : rgb(200,200,100);
+	height: 100%;
+	width: 0%;
+}
+
+#game .background 
+{
+	position : absolute;
+	left : 0;
+	top : 0;
+	width : 100%;
+	height : 100%;
+	z-index : 0;
+} 
+
+#game .background canvas 
+{
+	width : 100%;
+	height: 100%;
+}
+
+.sprite-jewel1{ background-position: 0 0; width: 48px; height: 48px; } 
+.sprite-jewel2{ background-position: 0 -98px; width: 50px; height: 50px; } 
+.sprite-jewel3{ background-position: 0 -198px; width: 48px; height: 48px; } 
+.sprite-jewel4{ background-position: 0 -296px; width: 48px; height: 48px; } 
+.sprite-jewel5{ background-position: 0 -394px; width: 32px; height: 32px; } 
+.sprite-jewel6{ background-position: 0 -476px; width: 50px; height: 50px; } 
+.sprite-jewel7{ background-position: 0 -576px; width: 48px; height: 48px; } 
+
+#container li {
+    background: url(csg-51119947d687c.png) no-repeat top left;
+}

@@ -12,7 +12,7 @@ jewel.board = (function () {
 			msgCount = 0;
 			callbacks = [];
 			
-			worker = new Worker("board.worker.js");
+			worker = new Worker("resources/jewel-warrior/board.worker.js");
 			
 			dom.bind(worker, "message", messageHandler);
 			post("initialize", settings, callback);
