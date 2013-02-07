@@ -5,7 +5,22 @@ jewel.display = (function() {
 		cols, rows,
 		jewelSize,
 		firstRun = true;
-
+	
+	function setup() {
+		var boardElement = $('#game-screen .game-board')[0];
+		cols = jewel.settings.cols;
+		rows = jewel.settings.rows;
+		jewelSize = jewel.settings.jewelSize;
+		canvas = document.createElement('canvas');
+		ctx = canvas.getContext('2d');
+		dom.addClass(canvas, 'board');
+		dom.addClass(canvas, 'board');
+		canvas.width = cols * jewelSize;
+		canvas.height = rows * jewelSize;
+		boardElement.appendChild(createBackground());
+		boardElement.appendChild(canvas);
+	} 
+	
 	function createBackground() {
 		var background = document.createElement('canvas'),
 		bgctx = background.getContext('2d');
@@ -22,21 +37,6 @@ jewel.display = (function() {
 		} 
 		return background
 	}
-	
-	function setup() {
-		var boardElement = $('#game-screen .gameboard')[0];
-		cols = jewel.settings.cols;
-		rows = jewel.settings.rows;
-		jewelSize = jewel.settings.jewelSize;
-		canvas = document.createElement('canvas');
-		ctx = canvas.getContext('2d');
-		dom.addClass(canvas, 'board');
-		dom.addClass(canvas, 'board');
-		canvas.width = cols * jewelSize;
-		canvas.height = rows * jewelSize;
-		boardElement.appendChild(createBackground());
-		boardElement.appendChild(canvas);
-	} 
 	
 	function initialize(callback) {
 		if (firstRun) {

@@ -81,6 +81,7 @@ window.addEventListener("load", function()
 			}
 		}]);
 		
+	// loading stage 2
 	if (Modernizr.standalone) { 
 		Modernizr.load([
 			{
@@ -92,7 +93,9 @@ window.addEventListener("load", function()
 				nope: "loader!resources/jewel-warrior/board.js"
 			}, {
 				load: [
+					"loader!resources/jewel-warrior/display.canvas.js",
 					"loader!resources/jewel-warrior/screen.main-menu.js",
+					"loader!resources/jewel-warrior/screen.game.js",
 					"loader!resources/jewel-warrior/images/jewel" + jewel.settings.jewelSize + ".png",
 				]
 			}]);
