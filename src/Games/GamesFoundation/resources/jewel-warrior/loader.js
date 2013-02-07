@@ -1,12 +1,14 @@
 var jewel = {
-	screens: {},
-	settings: {
-		rows: 8,
-		cols: 8,
-		baseScore: 100,
-		numJewelTypes: 7
-	}
-};
+		screens: {},
+		settings: {
+			rows: 8,
+			cols: 8,
+			baseScore: 100,
+			numJewelTypes: 7
+		}
+	},
+	numPreload = 0,
+	numLoaded = 0;
 
 Modernizr.addTest("standalone", function() {
 	return (window.navigator.standalone != false);
@@ -17,11 +19,44 @@ yepnope.addPrefix("preload", function(resource) {
 	resource.noexec = true;
 	return resource;
 });
-// loading
+
+//extend yepnope with preloading
+yepnope.addPrefix('loader', function (resource) {
+	console.log('Loading: ' + resource.url);
+	var isImage = /.+\.(jpg|png|gif)$/i.test(resource.url);
+	resource.noexec = isImage;
+	numPreload++;
+	resource.autoCallback = function(e) {
+		console.log('Finished loading: ' + resource.url);
+		numLoaded++;
+		if(isImage) {
+			var image = new Image();
+			image.src = resource.url;
+			//jewel.images[resource.url] = image;
+		}
+	};
+	
+	return resource;
+});
 
 // wait until main document is loaded
 window.addEventListener("load", function()
 {
+	// determine jewel size
+	var jewelProto = document.getElementById('jewel-proto'),
+		rect = jewelProto.getBoundingClientRect();
+	
+	// save the jewel size in the settings
+	jewel.settings.jewelSize = rect.width;
+	
+	function getLoadProgress() {
+		if (numPreload > 0) {
+			return numLoaded / numPreload;
+		} else {
+			return 0;
+		}
+	}
+	
 	// loading stage 1
 	Modernizr.load([
 		{ 
@@ -36,9 +71,10 @@ window.addEventListener("load", function()
 			yep: "resources/jewel-warrior/screen.splash.js",
 			nope: "resources/jewel-warrior/screen.install.js",
 			complete : function() {
+				jewel.game.setup();
 				// called when all files have finished	loading and executing		
 				if (Modernizr.standalone) {
-					jewel.game.showScreen('splash-screen');
+					jewel.game.showScreen('splash-screen', getLoadProgress);
 				} else {
 					jewel.game.showScreen('install-screen');
 				}
@@ -48,16 +84,17 @@ window.addEventListener("load", function()
 	if (Modernizr.standalone) { 
 		Modernizr.load([
 			{
-				load: [
-					"resources/jewel-warrior/screen.main-menu.js",
-				]
-			}, {
 				test: Modernizr.webworkers,
 				yep: [
-					"resources/jewel-warrior/board.worker-interface.js",
+					"loader!resources/jewel-warrior/board.worker-interface.js",
 					"preload!resources/jewel-warrior/board.worker.js"
 				],
-				nope: "resources/jewel-warrior/board.js"
+				nope: "loader!resources/jewel-warrior/board.js"
+			}, {
+				load: [
+					"loader!resources/jewel-warrior/screen.main-menu.js",
+					"loader!resources/jewel-warrior/images/jewel" + jewel.settings.jewelSize + ".png",
+				]
 			}]);
 	}
 	 
