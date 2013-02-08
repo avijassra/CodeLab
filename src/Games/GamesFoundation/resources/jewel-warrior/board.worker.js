@@ -18,6 +18,14 @@ addEventListener("message", function(e) {
 		case "swap":
 			board.swap(d.x1, d.y1, d.x2, d.y2, callback);
 			break;
+			
+		case "getBoard":
+			callback('');
+			break;
+			
+		case "print":
+			board.print();
+			break;
 	}
 	
 	function callback(data) {

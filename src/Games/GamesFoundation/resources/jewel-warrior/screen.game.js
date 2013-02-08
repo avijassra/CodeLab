@@ -3,9 +3,11 @@ jewel.screens["game-screen"] = (function() {
 		display = jewel.display;
 	
 	function run() {
-		board.initialize(function() {
+		board.initialize(function(data, jewels) {
 			display.initialize(function() {
-				// start the game
+				display.redraw(jewels, function() {
+					// do something
+				});
 			});
 		});
 	}

@@ -32,7 +32,7 @@ yepnope.addPrefix('loader', function (resource) {
 		if(isImage) {
 			var image = new Image();
 			image.src = resource.url;
-			//jewel.images[resource.url] = image;
+			jewel.image = image;
 		}
 	};
 	
