@@ -20,7 +20,7 @@ addEventListener("message", function(e) {
 			break;
 			
 		case "getBoard":
-			callback('');
+			callback(null);
 			break;
 			
 		case "print":

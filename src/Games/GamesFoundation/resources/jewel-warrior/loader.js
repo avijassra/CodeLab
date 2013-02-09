@@ -4,7 +4,17 @@ var jewel = {
 			rows: 8,
 			cols: 8,
 			baseScore: 100,
-			numJewelTypes: 7
+			numJewelTypes: 7,
+			controls: {
+				KEY_UP: 'moveUp',
+				KEY_LEFT: 'moveLeft',
+				KEY_DOWN: 'moveDown',
+				KEY_RIGHT: 'moveRight',
+				KEY_ENTER: 'selectJewel',
+				KEY_SPACE: 'selectJewel',
+				CLICK: 'selectJewel',
+				TOUCH: 'selectJewel'
+			}
 		}
 	},
 	numPreload = 0,
@@ -93,6 +103,7 @@ window.addEventListener("load", function()
 				nope: "loader!resources/jewel-warrior/board.js"
 			}, {
 				load: [
+					"loader!resources/jewel-warrior/input.js",
 					"loader!resources/jewel-warrior/display.canvas.js",
 					"loader!resources/jewel-warrior/screen.main-menu.js",
 					"loader!resources/jewel-warrior/screen.game.js",
