@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no" >
+		<title>Monster SMASH!!!</title>
+		<link rel="stylesheet" href="resources/main.css" />
+	</head>
+	<body>
+		<div id="game">
+			<div class="background" ></div>
+			<!-- splash screen -->
+			<div class="screen" id="splash-screen">
+				<div class="logo">Jewel Warrior</div>
+				<div class="progress">
+					<div class="indicator" ></div>
+				</div>
+				<span class="continue">Click to continue</span>
+			</div>
+			
+			<!-- main menu -->
+			<div class="screen" id="main-menu">
+				<h2 class="logo">Jewel <br/>Warrior</h2>
+				<ul class="menu">
+					<li><button name="game-screen">Play</button></li>
+					<li><button name="hiscore">Highscore</button></li>
+					<li><button name="about">About</button></li>
+					<li><button name="exit-screen">Exit</button></li>
+				</ul>
+			</div>
+			
+			<!-- game screen -->
+			<div class="screen" id="game-screen">
+				<div class="game-board jewel-size" ></div>
+			</div>
+			
+			<!-- high score -->
+			<div class="screen" id="highscores"></div>
+			
+			<!-- size check -->
+			<div id="jewel-proto" class="jewel-size" ></div>
+		</div>
+		
+		<script src="resources/modernizr.custom.44446.js"></script>
+		<script src="resources/monster-smash/loader.js"></script>
+		<script type="text/javascript">
+			
+		</script>
+	</body>
+</html>
