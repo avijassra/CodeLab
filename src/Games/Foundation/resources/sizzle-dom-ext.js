@@ -1,4 +1,4 @@
-jewel.dom = (function() {
+dom = (function() {
 	var $ = Sizzle;
 
 	function hasClass(el, clsName) {

@@ -5,7 +5,7 @@ jewel.screens["splash-screen"] = (function() {
 		firstRun = true;
 
 	function setup(getLoadProgress) {
-		var scr = $('#splash-screnn')[0];
+		var scr = $('#splash-screen')[0];
 		
 		function checkProgress() {
 			var p = getLoadProgress() * 100;

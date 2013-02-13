@@ -125,7 +125,7 @@ ul.menu li button:active
 
 .progress .indicator 
 {
-	background-color : rgb(200,200,100);
+	background-color : rgb(255,255,255);
 	height: 100%;
 	width: 0%;
 }

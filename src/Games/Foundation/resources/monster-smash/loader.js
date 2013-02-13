@@ -1,20 +1,10 @@
-var jewel = {
+var monster = {
 		screens: {},
 		settings: {
 			rows: 8,
 			cols: 8,
-			baseScore: 100,
-			numJewelTypes: 7,
-			controls: {
-				KEY_UP: 'moveUp',
-				KEY_LEFT: 'moveLeft',
-				KEY_DOWN: 'moveDown',
-				KEY_RIGHT: 'moveRight',
-				KEY_ENTER: 'selectJewel',
-				KEY_SPACE: 'selectJewel',
-				CLICK: 'selectJewel',
-				TOUCH: 'selectJewel'
-			}
+			maxDelay: 2000,
+			duration: 30
 		}
 	},
 	numPreload = 0,
@@ -42,7 +32,7 @@ yepnope.addPrefix('loader', function (resource) {
 		if(isImage) {
 			var image = new Image();
 			image.src = resource.url;
-			jewel.image = image;
+			monster.image = image;
 		}
 	};
 	
@@ -51,14 +41,7 @@ yepnope.addPrefix('loader', function (resource) {
 
 // wait until main document is loaded
 window.addEventListener("load", function()
-{
-	// determine jewel size
-	var jewelProto = document.getElementById('jewel-proto'),
-		rect = jewelProto.getBoundingClientRect();
-	
-	// save the jewel size in the settings
-	jewel.settings.jewelSize = rect.width;
-	
+{	
 	function getLoadProgress() {
 		if (numPreload > 0) {
 			return numLoaded / numPreload;
@@ -72,25 +55,25 @@ window.addEventListener("load", function()
 		{ 
 			// these files are always loaded
 			load : [
-				"resources/sizzle.js",
-				"resources/sizzle-dom-ext.js",
-				"resources/jewel-warrior/game.js"
-			]
-		}, {
+				"loader!resources/sizzle.js",
+				"loader!resources/sizzle-dom-ext.js",
+				"loader!resources/monster-smash/game.js",
+				"loader!resources/monster-smash/screen.splash.js",
+				"loader!resources/monster-smash/screen.menu.js",
+				"loader!resources/monster-smash/screen.game.js"
+			],
+			complete: function() {
+				monster.game.showScreen('splash-screen', getLoadProgress);
+			}
+		}/*, {
 			test: Modernizr.standalone,
 			yep: "resources/jewel-warrior/screen.splash.js",
 			nope: "resources/jewel-warrior/screen.install.js",
 			complete : function() {
-				jewel.game.setup();
-				// called when all files have finished	loading and executing		
-				if (Modernizr.standalone) {
-					jewel.game.showScreen('splash-screen', getLoadProgress);
-				} else {
-					jewel.game.showScreen('install-screen');
-				}
+				// do something
 			}
-		}]);
-		
+		}*/]);
+	/*	
 	// loading stage 2
 	if (Modernizr.standalone) { 
 		Modernizr.load([
@@ -111,5 +94,6 @@ window.addEventListener("load", function()
 				]
 			}]);
 	}
+	*/
 	 
 }, false);
