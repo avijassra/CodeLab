@@ -1,6 +1,5 @@
 jewel.display = (function() {
-	var dom = jewel.dom,
-		$ = dom.$,
+	var $ = dom.$,
 		canvas, ctx,
 		cols, rows,
 		jewelSize,

@@ -3,7 +3,7 @@
 	font-family: "CroissantOne-Regular";
 	font-weight: normal;
 	font-style: normal;
-	src: url("CroissantOne-Regular.ttf") format("truetype");
+	src: url("../CroissantOne-Regular.ttf") format("truetype");
 }
 
 @font-face
@@ -11,7 +11,7 @@
 	font-family: "Elsie-Regular";
 	font-weight: normal;
 	font-style: normal;
-	src: url("Elsie-Regular.ttf") format("truetype");
+	src: url("../Elsie-Regular.ttf") format("truetype");
 }
 
 #game 

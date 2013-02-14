@@ -1,6 +1,5 @@
 jewel.input = (function() {
-	var dom = jewel.dom,
-		$ = dom.$,
+	var $ = dom.$,
 		settings = jewel.settings,
 		inputHandlers,
 		keys = {

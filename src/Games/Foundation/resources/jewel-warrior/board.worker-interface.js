@@ -1,6 +1,5 @@
 jewel.board = (function () {
-	var dom = jewel.dom,
-		settings,
+	var settings,
 		worker,
 		msgCount,
 		callbacks;

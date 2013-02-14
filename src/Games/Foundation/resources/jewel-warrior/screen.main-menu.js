@@ -1,6 +1,5 @@
 jewel.screens["main-menu"] = (function() {
-	var dom = jewel.dom,
-		game = jewel.game,
+	var game = jewel.game,
 		firstRun = true;
 
 		function setup() {

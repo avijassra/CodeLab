@@ -1,6 +1,5 @@
 jewel.screens["splash-screen"] = (function() {
 	var game = jewel.game,
-		dom = jewel.dom,
 		$ = dom.$
 		firstRun = true;
 
