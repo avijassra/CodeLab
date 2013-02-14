@@ -1,0 +1,46 @@
+@font-face
+{
+	font-family: "CroissantOne-Regular";
+	font-weight: normal;
+	font-style: normal;
+	src: url("../CroissantOne-Regular.ttf") format("truetype");
+}
+
+@font-face
+{
+	font-family: "Elsie-Regular";
+	font-weight: normal;
+	font-style: normal;
+	src: url("../Elsie-Regular.ttf") format("truetype");
+}
+
+#game 
+{
+	font-family: "CroissantOne-Regular";
+	color: rgb(255, 255, 255, 0.75);
+} 
+
+#splash-screen
+{
+	text-align: center;
+	padding-top: 5em;
+}
+
+#splash-screen .continue
+{
+	padding-top: 2em;
+	cursor: pointer;
+	font-size: 1.25em;
+}
+
+.logo
+{
+	font-family: "Elsie-Regular";
+	font-size: 4.0em;
+	line-height: 1.5em;
+	font-weight: bold;
+	margin: 0;
+	text-align: center;
+	color: rgb(70, 120, 20);
+	text-shadow: 0.03em 0.03em 0.03em rgb(255, 255, 0), -0.03em -0.03em 0.03em rgb(255, 255, 0), 0.10em 0.15em 0.15em rgb(0, 0,  0);
+}

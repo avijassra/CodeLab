@@ -28,8 +28,8 @@ monster.screens['splash-screen'] = (function() {
 				green -= 10;
 				blue -= 10;
 				
-				indicator.style['background-color'] = 'rgb(' + red + ', ' + green + ', ' + blue + ')';
-				progress.style['background-color'] = 'rgb(' + red + ', ' + green + ', ' + blue + ')';
+				//indicator.style['background-color'] = 'rgb(' + red + ', ' + green + ', ' + blue + ')';
+				//progress.style['background-color'] = 'rgb(' + red + ', ' + green + ', ' + blue + ')';
 			}
 		
 			checkProgressTimeoutId = setTimeout(checkProgress, 100);

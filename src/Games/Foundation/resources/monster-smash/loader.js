@@ -63,6 +63,7 @@ window.addEventListener("load", function()
 				"loader!resources/monster-smash/screen.game.js"
 			],
 			complete: function() {
+				monster.game.setup();
 				monster.game.showScreen('splash-screen', getLoadProgress);
 			}
 		}/*, {
