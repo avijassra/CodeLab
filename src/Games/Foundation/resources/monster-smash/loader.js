@@ -57,6 +57,7 @@ window.addEventListener("load", function()
 			load : [
 				"loader!resources/sizzle.js",
 				"loader!resources/sizzle-dom-ext.js",
+				"loader!resources/monster-smash/display.canvas.js",
 				"loader!resources/monster-smash/game.js",
 				"loader!resources/monster-smash/screen.splash.js",
 				"loader!resources/monster-smash/screen.menu.js",

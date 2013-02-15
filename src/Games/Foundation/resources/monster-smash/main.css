@@ -28,7 +28,7 @@ body
 	left : 0;
 	top : 0;
 	width : 37em;
-	height : 41em;
+	height : 45em;
 	background-color : rgb(156,156,156);
 } 
 
@@ -129,93 +129,21 @@ ul.menu li button:hover
 
 #game-screen .game-board 
 {
-	position : relative;
-	width : 8em;
-	height: 8em;
-}
-
-#game-screen .game-board 
-{
 	position : absolute;
-	top: 2em;
+	top: 4em;
 	left: 1em;
 	width: 35em;
 	height : 35em;
-} 
-
-#game-screen .game-board .board 
-{
 	z-index : 10;
-} 
-
-#game-screen .game-board .board-bg 
+}
+#game-screen .game-board canvas
 {
-	z-index : 0;
+	width: 35em;
+	height : 35em;
 }
 
-/* 
-
-24 px
-.sprite-jewel-1{ background-position: 0 0; width: 24px; height: 24px; } 
-.sprite-jewel-2{ background-position: 0 -74px; width: 24px; height: 24px; } 
-.sprite-jewel-3{ background-position: 0 -148px; width: 24px; height: 24px; } 
-.sprite-jewel-4{ background-position: 0 -222px; width: 24px; height: 24px; } 
-.sprite-jewel-5{ background-position: 0 -296px; width: 24px; height: 24px; } 
-.sprite-jewel-6{ background-position: 0 -370px; width: 24px; height: 24px; } 
-.sprite-jewel-7{ background-position: 0 -444px; width: 24px; height: 24px; } 
-
-#container li {
-    background: url(images/jewel24.png) no-repeat top left;
+span.link
+{
+	text-decoration:underline;
+	cursor: pointer;
 }
-
-32 px
-.sprite-jewel-1{ background-position: 0 0; width: 32px; height: 32px; } 
-.sprite-jewel-2{ background-position: 0 -82px; width: 32px; height: 32px; } 
-.sprite-jewel-3{ background-position: 0 -164px; width: 32px; height: 32px; } 
-.sprite-jewel-4{ background-position: 0 -246px; width: 32px; height: 32px; } 
-.sprite-jewel-5{ background-position: 0 -328px; width: 32px; height: 32px; } 
-.sprite-jewel-6{ background-position: 0 -410px; width: 32px; height: 32px; } 
-.sprite-jewel-7{ background-position: 0 -492px; width: 32px; height: 32px; }
-
-#container li {
-    background: url(images/jewel32.png) no-repeat top left;
-}
-
-40 px
-.sprite-jewel-1{ background-position: 0 0; width: 40px; height: 40px; } 
-.sprite-jewel-2{ background-position: 0 -90px; width: 40px; height: 40px; } 
-.sprite-jewel-3{ background-position: 0 -180px; width: 40px; height: 40px; } 
-.sprite-jewel-4{ background-position: 0 -270px; width: 40px; height: 40px; } 
-.sprite-jewel-5{ background-position: 0 -360px; width: 40px; height: 40px; } 
-.sprite-jewel-6{ background-position: 0 -450px; width: 40px; height: 40px; } 
-.sprite-jewel-7{ background-position: 0 -540px; width: 40px; height: 40px; } 
-
-#container li {
-    background: url(images/jewel40.png) no-repeat top left;
-}
-
-64 px
-.sprite-jewel-1{ background-position: 0 0; width: 64px; height: 64px; } 
-.sprite-jewel-2{ background-position: 0 -114px; width: 64px; height: 64px; } 
-.sprite-jewel-3{ background-position: 0 -228px; width: 64px; height: 64px; } 
-.sprite-jewel-4{ background-position: 0 -342px; width: 64px; height: 64px; } 
-.sprite-jewel-5{ background-position: 0 -456px; width: 64px; height: 64px; } 
-.sprite-jewel-6{ background-position: 0 -570px; width: 64px; height: 64px; } 
-.sprite-jewel-7{ background-position: 0 -684px; width: 64px; height: 64px; } 
-
-#container li {
-    background: url(images/jewel64.png) no-repeat top left;
-}
-
-80 px
-.sprite-jewel-1{ background-position: 0 0; width: 80px; height: 80px; } 
-.sprite-jewel-2{ background-position: 0 -130px; width: 80px; height: 80px; } 
-.sprite-jewel-3{ background-position: 0 -260px; width: 80px; height: 80px; } 
-.sprite-jewel-4{ background-position: 0 -390px; width: 80px; height: 80px; } 
-.sprite-jewel-5{ background-position: 0 -520px; width: 80px; height: 80px; } 
-.sprite-jewel-6{ background-position: 0 -650px; width: 80px; height: 80px; } 
-.sprite-jewel-7{ background-position: 0 -780px; width: 80px; height: 80px; } 
-
-#container li {
-    background: url(images/jewel80.png) no-repeat top left;
-} */

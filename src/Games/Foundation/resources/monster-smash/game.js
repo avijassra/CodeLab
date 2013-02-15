@@ -11,12 +11,12 @@ monster.game = (function() {
 		if (activeScreen) {
 			dom.removeClass(activeScreen, 'active');
 		}
+		// mark current selected screen as active screen
+		dom.addClass(screen, 'active');
 		// get other parameters that might me provide to function
 		args = Array.prototype.slice.call(arguments, 1);
 		
 		monster.screens[screenId].run.apply(monster.screens[screenId], args);
-		// mark current selected screen as active screen
-		dom.addClass(screen, 'active');
 	}
 	
 	function setup() {
