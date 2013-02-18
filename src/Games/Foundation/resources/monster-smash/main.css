@@ -130,16 +130,25 @@ ul.menu li button:hover
 #game-screen .game-board 
 {
 	position : absolute;
-	top: 4em;
-	left: 1em;
-	width: 35em;
-	height : 35em;
+	top: 64px;
+	left: 16px;
+	width: 560px;
+	height : 560px;
 	z-index : 10;
+	border: 1px solid black;
 }
 #game-screen .game-board canvas
 {
-	width: 35em;
-	height : 35em;
+	width: 560px;
+	height : 560px;
+}
+
+#game-screen .game-board canvas.monster
+{
+	position: absolute;
+	height:64px;
+	width:64px;
+	border: 1px solid red;
 }
 
 span.link

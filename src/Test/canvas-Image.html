@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8">
+		<title>Canvas - Image</title>
+	</head>
+	<body>
+		<canvas id="canvas" width="600" height="300"></canvas>
+		<script>
+			var direction = {
+					LEFT: 0,
+					UP: 1,
+					RIGHT: 2,
+					DOWN: 3
+				},
+				spriteObject = {
+					//The X and Y source position of the sprite's image and its height and width
+					sourceX: 0,
+					sourceY: 444,
+					sourceWidth: 64,
+					sourceHeight: 64,
+
+					//The X and Y position of the sprite on the canvas as well as its height
+					x: 10,
+					y: 10,
+					width: 64,
+					height: 64,
+					
+					//The direction in which it is moving,
+					moveTo: direction.RIGHT
+				},
+				canvas = document.getElementById('canvas'),
+				ctx = canvas.getContext('2d'),
+				sprites = [], //An array to store the game sprites
+				monster = Object.create(spriteObject),
+				image = new Image();
+				
+			monster.x = 10;
+			monster.y = 10;
+			sprites.push(monster);
+				
+			image.src = 'resources/images/monster-smash.png';	
+			image.addEventListener('load', imageLoader, false);
+
+			function imageLoader() {
+				update();
+			}
+			
+			function update() {
+				//create the animation loop
+				window.requestAnimationFrame(update, canvas);
+				//Change the sprite's X position to make it move to the right across the canvas
+				if ((monster.moveTo === direction.RIGHT && monster.x <= 530) || monster.x === 10) { 
+					monster.x++;
+					monster.moveTo = direction.RIGHT;
+				} else if (monster.x >= 10) {
+					monster.x--;
+					monster.moveTo = direction.LEFT;
+				}
+				//Render the animation
+				render();
+			}
+			
+			function render() {
+				//Clear the previous animation frame
+				ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+				//Loop through all the sprites in the "sprites" array and use their properties to display them
+				if(sprites.length !== 0)
+				{
+					for(var i = 0; i < sprites.length; i++)
+					{
+						var sprite = sprites[i];
+						ctx.drawImage(
+							image, 
+							sprite.sourceX, sprite.sourceY, 
+							sprite.sourceWidth, sprite.sourceHeight,
+							Math.floor(sprite.x), Math.floor(sprite.y), 
+							sprite.width, sprite.height); 
+					}
+				}
+			}
+		</script>
+	</body>
+</html>
