@@ -5,7 +5,7 @@
 		<title>Canvas - Image</title>
 	</head>
 	<body>
-		<canvas id="canvas" width="600" height="300"></canvas>
+		<canvas id="canvas" width="1400" height="300" style="border: 1px solid black;"></canvas>
 		<script>
 			var direction = {
 					LEFT: 0,
@@ -27,7 +27,13 @@
 					height: 64,
 					
 					//The direction in which it is moving,
-					moveTo: direction.RIGHT
+					moveTo: direction.RIGHT,
+					
+					// rotation
+					rotate: 0,
+					
+					// transprancy
+					alpha: 0
 				},
 				canvas = document.getElementById('canvas'),
 				ctx = canvas.getContext('2d'),
@@ -52,11 +58,16 @@
 				//Change the sprite's X position to make it move to the right across the canvas
 				if ((monster.moveTo === direction.RIGHT && monster.x <= 530) || monster.x === 10) { 
 					monster.x++;
+					monster.alpha -= 0.1;
+					monster.rotate -= 10;
 					monster.moveTo = direction.RIGHT;
 				} else if (monster.x >= 10) {
 					monster.x--;
+					monster.alpha += 0.1;
+					monster.rotate += 10;
 					monster.moveTo = direction.LEFT;
 				}
+				
 				//Render the animation
 				render();
 			}
@@ -71,12 +82,39 @@
 					for(var i = 0; i < sprites.length; i++)
 					{
 						var sprite = sprites[i];
+						//Save the current state of the drawing surface before it's rotated
+						ctx.save();
+				 
+						//Rotate the canvas
+						ctx.translate
+						(
+						  Math.floor(sprite.x + (sprite.width / 2)), 
+						  Math.floor(sprite.y + (sprite.height / 2))
+						);
+						 
+						ctx.rotate(sprite.rotate * Math.PI / 180);
+						
+						ctx.translate
+						(
+						  -1 * Math.floor(sprite.x + (sprite.width / 2)), 
+						  -1 * Math.floor(sprite.y + (sprite.height / 2))
+						);
+						
+						ctx.globalAlpha = sprite.alpha;
+						
+						ctx.shadowColor = "rgba(100, 100, 100, 0.5)";
+						ctx.shadowOffsetX = 3;
+						ctx.shadowOffsetY = 3;
+						ctx.shadowBlur = 3;
+						
 						ctx.drawImage(
 							image, 
 							sprite.sourceX, sprite.sourceY, 
 							sprite.sourceWidth, sprite.sourceHeight,
 							Math.floor(sprite.x), Math.floor(sprite.y), 
-							sprite.width, sprite.height); 
+							sprite.width, sprite.height);
+							
+						ctx.restore();
 					}
 				}
 			}
