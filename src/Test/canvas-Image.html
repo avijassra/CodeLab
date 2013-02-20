@@ -5,7 +5,7 @@
 		<title>Canvas - Image</title>
 	</head>
 	<body>
-		<canvas id="canvas" width="1400" height="300" style="border: 1px solid black;"></canvas>
+		<canvas id="canvas" width="800" height="300" style="border: 1px solid black;"></canvas>
 		<script>
 			var direction = {
 					LEFT: 0,
@@ -16,7 +16,7 @@
 				spriteObject = {
 					//The X and Y source position of the sprite's image and its height and width
 					sourceX: 0,
-					sourceY: 444,
+					sourceY: 0,
 					sourceWidth: 64,
 					sourceHeight: 64,
 
@@ -33,19 +33,26 @@
 					rotate: 0,
 					
 					// transprancy
-					alpha: 0
+					alpha: 1
 				},
 				canvas = document.getElementById('canvas'),
 				ctx = canvas.getContext('2d'),
 				sprites = [], //An array to store the game sprites
+				cat = Object.create(spriteObject),
 				monster = Object.create(spriteObject),
 				image = new Image();
 				
-			monster.x = 10;
+			
+			cat.x = 10;
+			cat.y = 10;
+			sprites.push(cat);
+
+			monster.sourceY = 74;
+			monster.x = 730;
 			monster.y = 10;
 			sprites.push(monster);
 				
-			image.src = 'resources/images/monster-smash.png';	
+			image.src = 'resources/images/test.png';	
 			image.addEventListener('load', imageLoader, false);
 
 			function imageLoader() {
@@ -56,16 +63,18 @@
 				//create the animation loop
 				window.requestAnimationFrame(update, canvas);
 				//Change the sprite's X position to make it move to the right across the canvas
-				if ((monster.moveTo === direction.RIGHT && monster.x <= 530) || monster.x === 10) { 
-					monster.x++;
-					monster.alpha -= 0.1;
-					monster.rotate -= 10;
-					monster.moveTo = direction.RIGHT;
-				} else if (monster.x >= 10) {
+				if ((cat.moveTo === direction.RIGHT && cat.x <= 730) || cat.x === 10) { 
+					cat.x++;
 					monster.x--;
-					monster.alpha += 0.1;
+					cat.alpha -= 0.001;
+					monster.rotate -= 10;
+					cat.moveTo = direction.RIGHT;
+				} else if (cat.x >= 10) {
+					cat.x--;
+					monster.x++;
+					cat.alpha += 0.001;
 					monster.rotate += 10;
-					monster.moveTo = direction.LEFT;
+					cat.moveTo = direction.LEFT;
 				}
 				
 				//Render the animation
@@ -100,6 +109,7 @@
 						  -1 * Math.floor(sprite.y + (sprite.height / 2))
 						);
 						
+						console.log(sprite.alpha);
 						ctx.globalAlpha = sprite.alpha;
 						
 						ctx.shadowColor = "rgba(100, 100, 100, 0.5)";
