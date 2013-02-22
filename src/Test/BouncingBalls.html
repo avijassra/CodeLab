@@ -2,10 +2,10 @@
 <html lang="en-US">
 	<head>
 		<meta charset="UTF-8">
-		<title>Canvas - Image</title>
+		<title>Canvas - Bouncing balls</title>
 	</head>
 	<body>
-		<canvas id="canvas" width="800" height="300" style="border: 1px solid black;"></canvas>
+		<canvas id="canvas" width="800" height="400" style="border: 1px solid black;"></canvas>
 		<script>
 			var direction = {
 					LEFT: 0,
@@ -16,9 +16,9 @@
 				spriteObject = {
 					//The X and Y source position of the sprite's image and its height and width
 					sourceX: 0,
-					sourceY: 50,
-					sourceWidth: 64,
-					sourceHeight: 64,
+					sourceY: 0,
+					sourceWidth: 40,
+					sourceHeight: 40,
 
 					//The X and Y position of the sprite on the canvas as well as its height
 					x: 10,
@@ -27,7 +27,8 @@
 					height: 64,
 					
 					//The direction in which it is moving,
-					moveTo: direction.RIGHT,
+					moveX: direction.RIGHT,
+					moveY: direction.DOWN,
 					
 					// rotation
 					rotate: 0,
@@ -38,20 +39,15 @@
 				canvas = document.getElementById('canvas'),
 				ctx = canvas.getContext('2d'),
 				sprites = [], //An array to store the game sprites
-				cat = Object.create(spriteObject),
-				monster = Object.create(spriteObject),
+				ball = Object.create(spriteObject),
 				image = new Image();
-				
 			
-			cat.x = 10;
-			cat.y = 10;
-			sprites.push(cat);
-
-			monster.sourceY = 124;
-			monster.x = 730;
-			monster.y = 10;
-			sprites.push(monster);
-				
+			ball.x = Math.floor(Math.random() * 801);
+			ball.y = Math.floor(Math.random() * 401);
+			ball.moveX = Math.floor(Math.floor(Math.random() * 3)/2);
+			ball.moveY = Math.floor(Math.floor(Math.random() * 3)/2) + 1;
+			sprites.push(ball);
+			
 			image.src = 'resources/images/test.png';	
 			image.addEventListener('load', imageLoader, false);
 
@@ -62,19 +58,27 @@
 			function update() {
 				//create the animation loop
 				window.requestAnimationFrame(update, canvas);
+				
+				ball.rotate += 0.01;
+				
 				//Change the sprite's X position to make it move to the right across the canvas
-				if ((cat.moveTo === direction.RIGHT && cat.x <= 730) || cat.x === 10) { 
-					cat.x++;
-					monster.x--;
-					cat.alpha -= 0.001;
-					monster.rotate -= 10;
-					cat.moveTo = direction.RIGHT;
-				} else if (cat.x >= 10) {
-					cat.x--;
-					monster.x++;
-					cat.alpha += 0.001;
-					monster.rotate += 10;
-					cat.moveTo = direction.LEFT;
+				if ((ball.moveX === direction.RIGHT && ball.x <= (canvas.width - ball.width)) || 
+					ball.x === 0) { 
+					ball.x++;
+					ball.moveX = direction.RIGHT;
+				} else if (ball.x >= 0) {
+					ball.x--;
+					ball.moveX = direction.LEFT;
+				}
+				
+				//Change the sprite's X position to make it move to the down across the canvas
+				if ((ball.moveY === direction.DOWN && ball.y <= (canvas.height - ball.height)) || 
+					ball.y === 0) { 
+					ball.y++;
+					ball.moveY = direction.DOWN;
+				} else if (ball.y >= 0) {
+					ball.y--;
+					ball.moveY = direction.TOP;
 				}
 				
 				//Render the animation
