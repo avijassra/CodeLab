@@ -36,51 +36,70 @@
 					// transprancy
 					alpha: 1
 				},
+				speedFactor = 1,
 				canvas = document.getElementById('canvas'),
 				ctx = canvas.getContext('2d'),
 				sprites = [], //An array to store the game sprites
 				ball = Object.create(spriteObject),
-				image = new Image();
+				image = new Image(),
+				mouseEvent;
 			
 			ball.x = Math.floor(Math.random() * 801);
 			ball.y = Math.floor(Math.random() * 401);
-			ball.moveX = Math.floor(Math.floor(Math.random() * 3)/2);
-			ball.moveY = Math.floor(Math.floor(Math.random() * 3)/2) + 1;
+			ball.moveX = Math.floor(Math.floor(Math.random() * 6)/2);
+			ball.moveY = Math.floor(Math.floor(Math.random() * 6)/2) + 1;
 			sprites.push(ball);
 			
 			image.src = 'resources/images/test.png';	
 			image.addEventListener('load', imageLoader, false);
-
+			
+			canvas.addEventListener('mousemove', function(e) {
+				mouseEvent = e;
+			}, false); 
+			
+			canvas.addEventListener('mouseout', function() {
+				mouseEvent = null;
+			}, false);
+			
 			function imageLoader() {
 				update();
 			}
 			
 			function update() {
+				var vx, vy, vxy;
 				//create the animation loop
 				window.requestAnimationFrame(update, canvas);
 				
-				ball.rotate += 0.01;
+				ball.rotate++;
 				
-				//Change the sprite's X position to make it move to the right across the canvas
-				if ((ball.moveX === direction.RIGHT && ball.x <= (canvas.width - ball.width)) || 
-					ball.x === 0) { 
-					ball.x++;
-					ball.moveX = direction.RIGHT;
-				} else if (ball.x >= 0) {
-					ball.x--;
-					ball.moveX = direction.LEFT;
+				if(mouseEvent) {
+					
+					//vxy = Math.sqrt(
+					
+					
+				} else {
+					//Change the sprite's X position to make it move to the right across the canvas
+					if ((ball.moveX === direction.RIGHT && ball.x <= (canvas.width - ball.width)) || 
+						ball.x <= 0) { 
+						ball.x += 1 * speedFactor;
+						ball.moveX = direction.RIGHT;
+					} else if (ball.x >= 0) {
+						ball.x -= 1 * speedFactor;
+						ball.moveX = direction.LEFT;
+					}
+					
+					//Change the sprite's X position to make it move to the down across the canvas
+					if ((ball.moveY === direction.DOWN && ball.y <= (canvas.height - ball.height)) || 
+						ball.y <= 0) { 
+						ball.y += 1 * speedFactor;
+						ball.moveY = direction.DOWN;
+					} else if (ball.y >= 0) {
+						ball.y -= 1 * speedFactor;
+						ball.moveY = direction.UP;
+					}
 				}
 				
-				//Change the sprite's X position to make it move to the down across the canvas
-				if ((ball.moveY === direction.DOWN && ball.y <= (canvas.height - ball.height)) || 
-					ball.y === 0) { 
-					ball.y++;
-					ball.moveY = direction.DOWN;
-				} else if (ball.y >= 0) {
-					ball.y--;
-					ball.moveY = direction.TOP;
-				}
-				
+				speedFactor = Math.min(4, speedFactor + 0.001);
 				//Render the animation
 				render();
 			}
@@ -112,14 +131,6 @@
 						  -1 * Math.floor(sprite.x + (sprite.width / 2)), 
 						  -1 * Math.floor(sprite.y + (sprite.height / 2))
 						);
-						
-						console.log(sprite.alpha);
-						ctx.globalAlpha = sprite.alpha;
-						
-						ctx.shadowColor = "rgba(100, 100, 100, 0.5)";
-						ctx.shadowOffsetX = 3;
-						ctx.shadowOffsetY = 3;
-						ctx.shadowBlur = 3;
 						
 						ctx.drawImage(
 							image, 
