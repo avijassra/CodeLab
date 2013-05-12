@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2">
+		<title>1 min - jQuery Object Creation Test</title>
+	<body  style="height: 1500px;">
+		<div>
+			<select id="langList" style="width: 15em"></select><br/>
+			<button id="plusLangBtn"> + </button>
+			<button id="minusLangBtn"> - </button>
+		</div>
+		<div>
+			<select id="dbList" style="width: 15em"></select><br/>
+			<button id="plusDbBtn"> + </button>
+			<button id="minusDbBtn"> - </button>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js" type="text/javascript"></script>
+		<script src="Event.js" type="text/javascript"></script>
+		<script src="ListModel.js" type="text/javascript"></script>
+		<script src="ListView.js" type="text/javascript"></script>
+		<script src="ListController.js" type="text/javascript"></script>
+		<script>
+			$(function() {
+				var langModel = new ListModel(['MVC', 'JavaScript']),
+					langView = new ListView(langModel, {
+						'list' : $('#langList'),
+						'addButton' : $('#plusLangBtn'),
+						'delButton' : $('#plusLangBtn')
+					}),
+					langController = new ListController(langModel, langView),
+					dbModel = new ListModel(['SQL', 'SQLite']),
+					dbView = new ListView(dbModel, {
+						'list' : $('#dbList'),
+						'addButton' : $('#plusDbBtn'),
+						'delButton' : $('#minusDbBtn')
+					}),
+					dbController = new ListController(dbModel, dbView);
+					
+				langView.show();
+				dbView.show();
+			});
+		</script>
+	</body>
+</html>

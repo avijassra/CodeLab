@@ -58,6 +58,9 @@
 			
 			$(function() {
 				$('#textarea').bind({
+					keyup: function(e) {
+						displayMsg(e.keyCode);
+					},
 					paste: function(e) {
 						setTimeout(function() {
 							var $textarea = $('#textarea'),

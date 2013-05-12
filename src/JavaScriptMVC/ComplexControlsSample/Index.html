@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2">
+		<title>Complex Controls</title>
+	<body  style="height: 1500px;">
+		<div id="section_1" class="section" data-options='{ "id": "1" }'>
+			<div id="container_ques_1" class="control" data-options='{ "type": "Date", "cid": "1", "from": "1970" }' >
+				<select id="month_ques_1" style="width: 5em"></select>
+				<select id="day_ques_1" style="width: 5em"></select>
+				<select id="year_ques_1" style="width: 7em"></select><br/>
+			</div>
+			<br />
+			<div id="container_ques_2" class="control" data-options='{ "type": "Date", "cid": "2", "from": "2010", "to": "2050" }' >
+				<select id="month_ques_2" style="width: 5em"></select>
+				<select id="day_ques_2" style="width: 5em"></select>
+				<select id="year_ques_2" style="width: 7em"></select><br/>
+			</div>
+		</div>
+		<br />
+		<button id="save" >Save</button>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js" type="text/javascript"></script>
+		<script src="Event.js" type="text/javascript"></script>
+		<script src="shared.js" type="text/javascript"></script>
+		<script src="SectionView.js" type="text/javascript"></script>
+		<script src="SectionController.js" type="text/javascript"></script>
+		<script src="Control.DateModel.js" type="text/javascript"></script>
+		<script src="Control.DateView.js" type="text/javascript"></script>
+		<script src="Control.DateController.js" type="text/javascript"></script>
+		<script>
+			$(function() {
+				var id = $('div.section').data('options').id;
+				var sectionController = new shd.Control.SectionController(id);
+				$('#save').bind('click', function() {
+					alert(sectionController.getValue());
+				});
+			});
+		</script>
+	</body>
+</html>

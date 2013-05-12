@@ -66,18 +66,25 @@
 			}
 			
 			function update() {
-				var vx, vy, vxy;
+				var verticalDir,
+					horizontalDir,
+					vx,
+					vy;
+					
 				//create the animation loop
 				window.requestAnimationFrame(update, canvas);
 				
 				ball.rotate++;
 				
 				if(mouseEvent) {
-					
-					//vxy = Math.sqrt(
-					
+					horizontalDir = mouseEvent.pageX > ball.x ? 1 : -1;
+					verticalDir = mouseEvent.pageY > ball.y ? 1 : -1;
+					vx = horizontalDir * (mouseEvent.pageX - ball.x);
+					vy = vertivalDir * (mouseEvent.pageY - ball.y);
+					vx * vx + vy * vy = 2
 					
 				} else {
+					/*
 					//Change the sprite's X position to make it move to the right across the canvas
 					if ((ball.moveX === direction.RIGHT && ball.x <= (canvas.width - ball.width)) || 
 						ball.x <= 0) { 
@@ -96,7 +103,7 @@
 					} else if (ball.y >= 0) {
 						ball.y -= 1 * speedFactor;
 						ball.moveY = direction.UP;
-					}
+					}*/
 				}
 				
 				speedFactor = Math.min(4, speedFactor + 0.001);
