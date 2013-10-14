@@ -1,0 +1,42 @@
+/************************************************************************************
+Image Rotator
+************************************************************************************/
+div#rotatorPics
+{
+	width: 400px;
+	height:400px;
+	margin:auto;
+}
+
+/************************************************************************************
+Image Plusify
+************************************************************************************/
+div#plusifyPics
+{
+	width: 550px;
+	height:550px;
+}
+
+/************************************************************************************
+Effects Multi-Dimensions
+************************************************************************************/
+
+div#multiDimensions
+{
+	overflow:hidden;
+	margin:auto;
+	height:300px;
+	width:500px;
+	border: 1px solid black;
+	border-radius: 5px;
+	position:relative;
+	background-color: #F0F0F0
+}
+
+div.imgContainer
+{
+	margin:auto;
+	height:400px;
+	width:600px;
+	position:absolute;
+}

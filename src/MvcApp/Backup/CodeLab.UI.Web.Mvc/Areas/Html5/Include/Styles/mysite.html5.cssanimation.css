@@ -1,0 +1,516 @@
+div.noCssAnimationSupport
+{
+	top:0px;
+	text-align:center;
+	position:fixed;
+	background-color:orange;
+	min-height:20px;
+	width:100%;
+	font-weight:bold;
+}
+
+div.codebox
+{
+	min-height:50px;
+	width:80%;
+	margin:auto;
+	padding:20px;
+	background:#D9F0FF;
+	border-radius:10px;
+	/*
+	- In 'transition-property' we can specify the property on which we want animation to take place
+	like in this one we want box-shadow property to change.
+	- in 'transition-duration' we specify the time duration in which it should complete css animation
+	
+	Note -  the '-webkit-', '-moz-', and '-o-' prefix are vendor specific
+	*/
+	transition-property: box-shadow;
+	transition-duration: 1s;
+	-webkit-transition-property: box-shadow;
+	-webkit-transition-duration: 1s;
+	-moz-transition-property: box-shadow;
+	-moz-transition-duration: 1s;
+	-o-transition-property: box-shadow;
+	-o-transition-duration: 1s;
+	box-shadow: 3px 3px 3px #888888;
+	rotation-point:50% 50%;
+}
+
+div.codebox:hover
+{
+	box-shadow: 5px 5px 5px #888888;
+}
+
+div.boxHeading
+{
+	font-weight:bold;
+	text-decoration:underline;
+}
+
+span.note
+{
+	color:Red;
+	font-size:small;
+	text-decoration: italic;
+}
+
+span.note:before
+{
+	content:"NOTE: ";
+	color:Red;
+}
+
+div.samplebox
+{
+	width:500px;
+	min-height:300px;
+	padding:10px;
+	margin:auto;
+	border:1px solid gray;
+	box-shadow: 3px 3px 3px #888888;
+	position:relative;
+}
+
+div.longbox
+{
+	min-height:500px !important;
+}
+
+/***** - Sample 1 - *****/
+div.transbox
+{
+	left:0px;
+	width:50px;
+	min-height:50px;
+	max-height:50px;
+	margin-bottom: 10px;
+	position:relative;
+	border-radius:0px;
+	color:#fff;
+	text-align:center;
+}
+
+/*
+- In 'transition' we can specify the <property> <duration> <type>
+	> property -  which property(ies) to target for transition
+	> duration - time in which animation should complete
+	> type - type of animation like ease, ease-in, ease-out, ease-in-out, or custom
+	
+- in 'transform'
+	> rotate - rotates element on X axis
+Note -  the '-webkit-', '-moz-', and '-o-' prefix are vendor specific
+*/
+	
+div.redtransbox
+{
+	background-color: red;
+	border:1px solid red;
+	-webkit-transition:all 2s ease ;
+	-moz-transition:all 2s ease ;
+	-o-transition:all 2s ease ;
+	transition:all 2s ease ;
+}
+
+div.yellowtransbox
+{
+	background-color: yellow;
+	border:1px solid yellow;
+	-webkit-transition:all 2s ease-in;
+	-moz-transition:all 2s ease-in;
+	-o-transition:all 2s ease-in;
+	transition:all 2s ease-in;
+}
+
+div.greentransbox
+{
+	background-color: green;
+	border:1px solid green;
+	-webkit-transition:all 2s ease-out;
+	-moz-transition:all 2s ease-out;
+	-o-transition:all 2s ease-out;
+	transition:all 2s ease-out;
+}
+
+div.bluetransbox
+{
+	background-color: blue;
+	border:1px solid blue;
+	-webkit-transition:all 2s ease-in-out;
+	-moz-transition:all 2s ease-in-out;
+	-o-transition:all 2s ease-in-out;
+	transition:all 2s ease-in-out;
+}
+
+div.orangetransbox
+{
+	background-color: orange;
+	border:1px solid orange;
+	-webkit-transition:all 2s linear;
+	-moz-transition:all 2s linear;
+	-o-transition:all 2s linear;
+	transition:all 2s linear;
+}
+
+div.transboxOnMouseOver
+{
+	left:400px !important;
+	border-radius:50% !important;
+	transform: rotate(360deg);
+	-webkit-transform: rotate(360deg);
+	-moz-transform: rotate(360deg);
+	-o-transform: rotate(360deg);
+}
+
+/***** - Sample 2 - *****/
+
+div.bigRedBall
+{
+	width:100px;
+	height:100px;
+	top:110px;
+	left:210px;
+	border-radius:50%;
+	opacity:1;
+	filter:alpha(opacity=100); /* For IE8 and earlier */
+	position:absolute;
+	background-color:Red;
+	transition:all 2s linear;
+	-webkit-transition:all 2s linear;
+	-moz-transition:all 2s linear;
+	-o-transition:all 2s linear;
+}
+
+div.smallBlueBall
+{
+	width:30px;
+	height:30px;
+	top:145px;
+	left:245px;
+	border-radius:50%;
+	position:absolute;
+	background-color:Blue;
+	transition:all 2s ease-in-out;
+	-webkit-transition:all 2s ease-in-out;
+	-moz-transition:all 2s ease-in-out;
+	-o-transition:all 2s ease-in-out;
+}
+
+#centerBall.moveBalls
+{
+	opacity:0;
+	filter:alpha(opacity=0); /* For IE8 and earlier */
+}
+
+#ballLT.moveBalls
+{
+	top:0px;
+	left:0px;
+	background-color:Red;
+}
+
+#ballLB.moveBalls
+{
+	top:290px;
+	left:0px;
+	background-color:Red;
+}
+
+#ballRT.moveBalls
+{
+	top:0px;
+	left:490px;
+	background-color:Red;
+}
+
+#ballRB.moveBalls
+{
+	top:290px;
+	left:490px;
+	background-color:Red;
+}
+
+/***** - Sample 3 - *****/
+
+div#rectBox
+{
+	position:absolute;
+	display:inline-block;
+	margin:auto;
+}
+
+div.rect
+{
+	float:left;
+	min-width:125px;
+	min-height:125px;
+	max-height:125px;
+	margin:20px;
+	text-align:center;
+	border:1px solid Red;
+	position:relative;
+	/* duration in which transition should complete*/
+	transition-duration: 2s;
+	-webkit-transition-duration: 2s;
+	-moz-transition-duration: 2s;
+	-o-transition-duration: 2s;
+}
+
+/* 
+rotateX -> rotate on X axis
+rotateY -> rotate on Y axis
+rotateZ -> rotate on Z axis
+*/
+div#rect1.rotateAnimate
+{
+	transform: rotateX(180deg);
+	-webkit-transform: rotateX(180deg);
+	-moz-transform: rotateX(180deg);
+	-o-transform: rotateX(180deg);
+}
+
+div#rect2.rotateAnimate
+{
+	transform: rotateY(180deg);
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+	-o-transform: rotateY(180deg);
+}
+
+div#rect3.rotateAnimate
+{
+	transform: rotateZ(180deg);
+	-webkit-transform: rotateZ(180deg);
+	-moz-transform: rotateZ(180deg);
+	-o-transform: rotateZ(180deg);
+}
+
+div#rect12.rotateAnimate
+{
+	transform: rotateX(180deg) rotateY(180deg);
+	-webkit-transform: rotateX(180deg) rotateY(180deg);
+	-moz-transform: rotateX(180deg) rotateY(180deg);
+	-o-transform: rotateX(180deg) rotateY(180deg);
+}
+
+div#rect23.rotateAnimate
+{
+	transform: rotateY(180deg) rotateZ(180deg);
+	-webkit-transform: rotateY(180deg) rotateZ(180deg);
+	-moz-transform: rotateY(180deg) rotateZ(180deg);
+	-o-transform: rotateY(180deg) rotateZ(180deg);
+}
+
+div#rect31.rotateAnimate
+{
+	transform: rotateZ(180deg) rotateX(180deg);
+	-webkit-transform: rotateZ(180deg) rotateX(180deg);
+	-moz-transform: rotateZ(180deg) rotateX(180deg);
+	-o-transform: rotateZ(180deg) rotateX(180deg);
+}
+
+div#rect123.rotateAnimate
+{
+	transform: rotateX(180deg) rotateY(180deg) rotateZ(180deg);
+	-webkit-transform: rotateX(180deg) rotateY(180deg) rotateZ(180deg);
+	-moz-transform: rotateX(180deg) rotateY(180deg) rotateZ(180deg);
+	-o-transform: rotateX(180deg) rotateY(180deg) rotateZ(180deg);
+}
+
+/***** - Sample 4 - *****/
+
+/*
+creating custom animation.
+can specify animation action like from -> to
+ 
+translateY -> moves on Y axis
+*/
+
+@-webkit-keyframes bounce 
+{
+	0% {
+	-webkit-transform: translateY(-300px);
+	}
+	60%	{
+		-webkit-transform: translateY(0px);
+	}
+	70%	{
+		-webkit-transform: translateY(-100px);
+	}
+	84%	{
+		-webkit-transform: translateY(0px);
+	}
+	92%	{
+		-webkit-transform: translateY(-40px);
+	}
+	96%	{
+		-webkit-transform: translateY(0px);
+	}
+	98%	{
+		-webkit-transform: translateY(-10px);
+	}
+	100%	{
+		-webkit-transform: translateY(0px);
+	}
+}
+
+@-moz-keyframes bounce 
+{
+	0% {
+	-moz-transform: translateY(-300px);
+	}
+	60%	{
+		-moz-transform: translateY(0px);
+	}
+	70%	{
+		-moz-transform: translateY(-100px);
+	}
+	84%	{
+		-moz-transform: translateY(0px);
+	}
+	92%	{
+		-moz-transform: translateY(-40px);
+	}
+	96%	{
+		-moz-transform: translateY(0px);
+	}
+	98%	{
+		-moz-transform: translateY(-10px);
+	}
+	100%	{
+		-moz-transform: translateY(0px);
+	}
+}
+
+@-o-keyframes bounce 
+{
+	0% {
+		-o-transform: translateY(-300px);
+	}
+	60%	{
+		-o-transform: translateY(0px);
+	}
+	70%	{
+		-o-transform: translateY(-100px);
+	}
+	84%	{
+		-o-transform: translateY(0px);
+	}
+	92%	{
+		-o-transform: translateY(-40px);
+	}
+	96%	{
+		-o-transform: translateY(0px);
+	}
+	98%	{
+		-o-transform: translateY(-10px);
+	}
+	100%	{
+		-webkit-transform: translateY(0px);
+	}
+}
+
+@keyframes bounce 
+{
+	0% {
+		transform: translateY(-300px);
+	}
+	60%	{
+		transform: translateY(0px);
+	}
+	70%	{
+		transform: translateY(-100px);
+	}
+	84%	{
+		transform: translateY(0px);
+	}
+	92%	{
+		transform: translateY(-40px);
+	}
+	96%	{
+		transform: translateY(0px);
+	}
+	98%	{
+		transform: translateY(-10px);
+	}
+	100%	{
+		transform: translateY(0px);
+	}
+}
+
+div.bouncyBall
+{
+	width:20px;
+	height:20px;
+	top:300px;
+	left:265px;
+	border-radius:50%;
+	position:absolute;
+}
+
+div.bouncyBallOnMouseOver
+{
+	-webkit-animation-name: bounce;
+	-webkit-animation-duration: 4s;
+	-webkit-animation-timing-function: ease-out; /* ease is the default */
+	-webkit-animation-delay: 0s;             /* 0 is the default */
+	-webkit-animation-direction: alternate;  /* normal is the default */
+	-moz-animation-name: bounce;
+	-moz-animation-duration: 4s;
+	-moz-animation-timing-function: ease-out; /* ease is the default */
+	-moz-animation-delay: 0s;             /* 0 is the default */
+	-moz-animation-direction: alternate;  /* normal is the default */
+	-o-animation-name: bounce;
+	-o-animation-duration: 4s;
+	-o-animation-timing-function: ease-out; /* ease is the default */
+	-o-animation-delay: 0s;             /* 0 is the default */
+	-o-animation-direction: alternate;  /* normal is the default */
+	animation-name: bounce;
+	animation-duration: 4s;
+	animation-timing-function: ease-out; /* ease is the default */
+	animation-delay: 0s;             /* 0 is the default */
+	animation-direction: alternate;  /* normal is the default */
+}
+
+/***** - Sample 5 - *****/
+
+div.imageCont
+{
+	position: relative; 
+	background-color: white; 
+	padding: 5px; 
+	border: 1px solid gray;
+	-webkit-transition:all 1s ease-in-out;
+	-moz-transition:all 1s ease-in-out;
+	-o-transition:all 1s ease-in-out;
+	transition:all 1s ease-in-out;
+}
+
+/* 
+translateX -> moves on X axis
+translateY -> moves on Y axis
+scale -> change scale of the element, also means resize. less then 1 means smaller and greater then 1 means bigger
+rotate -> rotate by default rotates on X axis else can also specify like rotateX, rotateY, rotateZ
+*/
+div.top.fanOut
+{
+	-webkit-transform: translateX(-45px) translateY(10px) scale(1.1, 1.1) rotate(-7deg);
+	-moz-transform: translateX(-45px) translateY(10px) scale(1.1, 1.1) rotate(-7deg);
+	-o-transform: translateX(-45px) translateY(10px) scale(1.1, 1.1) rotate(-7deg);
+	transform: translateX(-45px) translateY(10px) scale(1.1, 1.1) rotate(-7deg);
+}
+
+div.middle.fanOut
+{
+	-webkit-transform: scale(1.1, 1.1);
+	-moz-transform: scale(1.1, 1.1);
+	-o-transform: scale(1.1, 1.1);
+	transform: scale(1.1, 1.1);
+}
+
+div.bottom.fanOut
+{
+	-webkit-transform: translateX(45px) translateY(10px) scale(1.1, 1.1) rotate(7deg);
+	-moz-transform: translateX(45px) translateY(10px) scale(1.1, 1.1) rotate(7deg);
+	-o-transform: translateX(45px) translateY(10px) scale(1.1, 1.1) rotate(7deg);
+	transform: translateX(45px) translateY(10px) scale(1.1, 1.1) rotate(7deg);
+}

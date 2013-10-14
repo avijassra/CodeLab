@@ -1,0 +1,104 @@
+﻿@{
+    ViewBag.Title = "Image Rotator";
+    Layout = "~/Areas/Jquery/Views/Shared/_Layout.cshtml";
+}
+
+@section IncludeScripts
+{
+    <script src="@Microsoft.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/Include/Cache/Image.Rotator.Scripts")" type="text/javascript"></script>
+}
+
+<h2>Image Rotator</h2>
+
+<div id="container">
+    <div id="rotatorPics"></div>
+    <br />
+    <p>
+        Hi guys, i have tried to create a very simple plugin for rotating images in jQuery. This is my first plugin and over the time i will try to create lot many with time and need.
+        <br />
+    </p>
+    <b>Features</b>
+    <table id="table-design" class="infotable">
+	    <thead>
+		    <th>Property</th>
+		    <th>Values</th>
+		    <th>Additional Info</th>
+	    </thead>
+	    <tbody>
+		    <tr>
+			    <td><div>border</div></td>
+			    <td><div>valid css border style</div></td>
+			    <td><div>'1px solid balck' is default value</div></td>
+		    </tr>
+		    <tr>
+			    <td><div>backgroundColor</div></td>
+			    <td><div>valid css color</div></td>
+			    <td><div>'gray' is default value</div></td>
+		    </tr>
+            <tr>
+			    <td><div>barColor</div></td>
+			    <td><div>valid css color</div></td>
+			    <td><div>'black' is default value</div></td>
+		    </tr>
+
+		    <tr>
+			    <td><div>infoBarAtTop</div></td>
+			    <td><div>false - display bar at bottom <br />true - display bar at top</div></td>
+			    <td><div>by default its false</div></td>
+		    </tr>
+            <tr>
+			    <td><div>mergeOnChange</div></td>
+			    <td><div>false - does no merging of images <br />true - merges images into each other</div></td>
+			    <td><div>by default its true</div></td>
+		    </tr>
+            <tr>
+			    <td><div>displayAutoRotate</div></td>
+			    <td><div>true or false</div></td>
+			    <td><div>by default its false</div></td>
+		    </tr>
+            <tr>
+			    <td><div>autoRotateTimer</div></td>
+			    <td><div>'slow', 'fast' or milli-seconds</div></td>
+			    <td><div>valid jQuery speed and by default its '5000'</div></td>
+		    </tr>
+            <tr>
+			    <td><div>rotationSpeed</div></td>
+			    <td><div>'slow', 'fast' or milli-seconds</div></td>
+			    <td><div>valid jQuery speed for fadeOut and by default its '1500'</div></td>
+		    </tr>
+            <tr>
+			    <td><div>previousText</div></td>
+			    <td><div>Text for the previous link</div></td>
+			    <td><div>e.g. ' < ' is default value</div></td>
+		    </tr>
+		    <tr>
+			    <td><div>nextText</div></td>
+			    <td><div>Text for the next link</div></td>
+			    <td><div>e.g. ' > ' is default value</div></td>
+		    </tr>
+		    <tr>
+			    <td><div>images</div></td>
+			    <td><div>valid array of json objects with 'src' and 'desc' as one of the nodes</div></td>
+			    <td><div>if images if null empty or images does not have json node of src and desc then images are never rendered</div></td>
+		    </tr>
+		    <tr>
+			    <td><div>onPrevious</div></td>
+			    <td><div>Callback event raised on previous link click</div></td>
+			    <td><div>Event is raised after image is changed to previous viewed image</div></td>
+		    </tr>
+		    <tr>
+			    <td><div>onNext</div></td>
+			    <td><div>Callback event raised on next link click</div></td>
+			    <td><div>Event is raised after image is changed to next image in queue</div></td>
+		    </tr>
+	    </tbody>
+    </table>
+    <br />
+    <p>Download full and minified version from <a class="download" href="@Url.Content("~/Downloads/jquery.imageRotator-1.4.rar")">here</a> 
+        and to try working example, @Html.ActionLink("click here", MVC.Jquery.ImageRotator.TryIt(), new { @class = "sampleLink" })</p>
+    <br /><br />
+</div>
+
+<script type="text/javascript" >
+    var imgUrl = '@Url.Action(MVC.Jquery.ImageRotator.GetImagesAndDesc())';
+</script>

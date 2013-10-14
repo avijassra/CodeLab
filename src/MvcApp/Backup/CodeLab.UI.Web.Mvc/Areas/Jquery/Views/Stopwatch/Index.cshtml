@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "jQuery Stopwatch";
+    Layout = "~/Areas/Jquery/Views/Shared/_Layout.cshtml";
+}
+
+@section IncludeStyles{
+<style type="text/css">
+    #boxCont
+    {
+    	position:relative;
+    	width:20px;
+	    height:20px;
+	    overflow:hidden;
+    	
+    }
+    
+    div.timer
+    {
+    	border:1px solid white;
+    	position:absolute;
+    	background-color: Black;
+    	color:White;
+    	font-weight:bold;
+    	min-width:20px;
+    	min-height:20px;
+    	text-align:center;
+    	-webkit-transition-property: all;
+	    -webkit-transition-duration: .5s;
+    }
+</style>
+}
+
+@section IncludeScripts
+{
+    @*<script src="@Microsoft.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/Include/Cache/Clock.Scripts")" type="text/javascript"></script>*@
+    <script src="@Url.Content("~/Areas/Jquery/Include/Scripts/Plugins/jquery.clock-0.1.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Areas/Jquery/Include/Scripts/clock.js")" type="text/javascript"></script>
+}
+
+
+
+<h2>jQuery Stopwatch</h2>
+
+<div id="viewContainer">
+    <div id="clockTime"></div>
+    <br />
+    <div class="jqStopwatch"></div>
+    <br />
+    <div id="timer"></div>
+    <br />
+    <button id="start-N-stop" >Start</button>
+    <br />
+    <div id="boxCont">
+        <div class="timer current">01</div>
+    </div>
+</div>

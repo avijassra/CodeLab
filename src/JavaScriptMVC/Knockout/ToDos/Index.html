@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta charset="utf-8">
+	<meta name="generator" content="CoffeeCup HTML Editor (www.coffeecup.com)">
+	<meta name="dcterms.created" content="Sun, 30 Jun 2013 04:57:44 GMT">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<title>ToDos</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/2.2.1/knockout-min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
+	<link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" />
+	<link href="todo.css" rel="stylesheet" />
+	<script src="todo.js"></script>
+	<!--[if IE]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+  </head>
+  <body>
+	<h2>Todo</h2>
+	  <div  >
+		<input type="checkbox" />
+		<span>{{remaining()}} task(s) out of {{todos.length}}</span>
+		<hr>
+		<ul class="unstyled">
+			<li ng-repeat="todo in todos" >
+				<input type="checkbox" ng-model="todo.done" />
+				<span class="done-{{todo.done}}" >{{todo.desc}}
+					<span time-format="MM-dd-yyyy" time-Prop="deadline" ></span>
+				</span>
+			</li>
+		</ul>
+		<hr>
+		<form ng-submit="addTodo()">
+			<input type="text" ng-model="todoDesc"  size="30" placeholder="add new todo here" required>
+			<input type="date" ng-model="todoDeadline"  size="30" placeholder="mm/dd/yyyy">
+			<input class="btn-primary" type="submit" value="add">
+		  </form>
+	  </div>
+  </body>
+</html>

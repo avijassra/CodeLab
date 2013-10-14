@@ -1,0 +1,112 @@
+﻿@{
+    ViewBag.Title = "CSS Animation";
+    Layout = "~/Areas/Html5/Views/Shared/_Layout.cshtml";
+}
+
+@section IncludeStyles{
+    <link href="@Microsoft.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/Include/Cache/CssAnimation.Style")" rel="stylesheet" type="text/css" />
+}
+
+@section IncludeScripts{
+    <script src="@Microsoft.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/Include/Cache/CssAnimation.Scripts")" type="text/javascript"></script>
+}
+
+<h2>CSS Animation</h2>
+
+<div class="codebox" >
+    <div class="boxHeading">Sample 1</div>
+    <p>
+        The code sample below shows how CSS animation can be used.
+        In this eample, i have tried to display css transition and how it can be used.
+    </p>
+</div>
+<br /><br />
+<div id="transitionTypeExample" class="samplebox">
+	<div class="transbox redtransbox">ease</div>
+	<div class="transbox yellowtransbox">ease-in</div>
+	<div class="transbox greentransbox">ease-out</div>
+	<div class="transbox bluetransbox">ease-in-out</div>
+	<div class="transbox orangetransbox">linear</div>
+</div>
+<br /><br />
+<div class="codebox" >
+    <div class="boxHeading">Sample 2</div>
+    <p>
+        Simple example of css animation. Its power
+    </p>
+</div>
+<br /><br />
+<div id="spreadingBallsExample" class="samplebox">
+    <div id="centerBall" class="jqball bigRedBall" ></div>
+    <div id="ballLT" class="jqball smallBlueBall" ></div>
+    <div id="ballLB" class="jqball smallBlueBall" ></div>
+    <div id="ballRT" class="jqball smallBlueBall" ></div>
+    <div id="ballRB" class="jqball smallBlueBall" ></div>
+</div>
+<br /><br />
+<div class="codebox" >
+    <div class="boxHeading">Sample 3</div>
+    <p>
+        In the below example, I am using transform style to rotate rectangles in X, Y and Z direction.
+        e.g to rotate last rectangle on XYZ <br />
+            <b>transform: rotateX(180deg) rotateY(180deg) rotateZ(180deg);</b><br />
+        <span class="note">remember to use browser prefix.</span>
+    </p>
+</div>
+<br /><br />
+<div id="3dRotationExample" class="samplebox longbox">
+    <div id="rectBox">
+        <div id="rect1" class="rect" >Rotates X axis </div>
+        <div id="rect2" class="rect" >Rotates Y axis</div>
+        <div id="rect3" class="rect" >Rotates Z axis</div>
+        <div id="rect12" class="rect" >Rotates XY axis</div>
+        <div id="rect23" class="rect" >Rotates YZ axis</div>
+        <div id="rect31" class="rect" >Rotates ZX axis</div>
+        <div id="rect123" class="rect" >Rotates XYZ axis</div>
+    </div>
+</div>
+<br /><br />
+<div class="codebox" >
+    <div class="boxHeading">Sample 4</div>
+    <p>
+        Example of small animation that can be done by using CSS Animation.
+    </p>
+</div>
+<br /><br />
+<div id="bouncyBallExample" class="samplebox">
+    <!-- one ball is added by default -->
+    <div id="bouncyBall1" class="bouncyBall"></div>
+</div>
+<br />
+<div>
+    <center>
+        <button id="startBouncyBallAnimation" >Start</button>
+    </center>
+</div>
+<br /><br />
+<div class="codebox">
+    <div class="boxHeading">Sample 5</div>
+    <p> 
+        CSS Animation example how images in Google+ fans out from the albums.
+    </p>
+</div>
+<br /><br />
+<div id="imagePlusifyExample" class="samplebox">
+    <div id="plusifyAlbum" data-plusify-cacheindex="0" class="jqAlbum" style="position: relative; width: 200px; background-color: white; left:130px; margin: 30px; height: 223px; ">
+        <div id="plusifyAlbumImgs" data-plusify-cacheindex="0" style="position: relative; width: 200px; height: 200px; background-color: white; float: left; ">
+            <div id="plusifyAlbumImgs_div_0" data-plusify-cacheindex="0" class="jqIC top imageCont" style="width: 190px; height: 190px; top: 0px; z-index: 3; left: 0px; ">
+                <img id="plusifyAlbumImgs_div_img_0" alt="" src="/Areas/Jquery/Include/Images/Scotland/DSC_0480.JPG")" data-plusify-cacheindex="0" style="position: relative; width: 190px; height: 190px; ">
+            </div>
+            <div id="plusifyAlbumImgs_div_1" data-plusify-cacheindex="0" class="jqIC middle imageCont" style="width: 186px; height: 186px; top: -200px; left: 6px; z-index: 2; ">
+                <img id="plusifyAlbumImgs_div_img_1" alt="" src="/Areas/Jquery/Include/Images/Scotland/DSCF1533.JPG")" data-plusify-cacheindex="0" style="position: relative; width: 186px; height: 186px; ">
+            </div>
+            <div id="plusifyAlbumImgs_div_2" data-plusify-cacheindex="0" class="jqIC bottom imageCont" style="width: 182px; height: 182px; top: -396px; z-index: 1; left: 12px; ">
+                <img id="plusifyAlbumImgs_div_img_2" alt="" src="/Areas/Jquery/Include/Images/Scotland/DSC_0381.JPG")" data-plusify-cacheindex="0" style="position: relative; width: 182px; height: 182px; ">
+            </div>
+        </div>
+        <div id="plusifyPics_albumContainer_lbl0" data-plusify-cacheindex="0" class="jqAN" style="position: absolute; bottom: 0px; margin: auto; width: 200px; color: rgb(0, 0, 0); z-index: 9999; text-align: center; ">Scotland</div>
+    </div>
+</div>
+<br /><br />
+
+<p>Feel free to download the code from <a href="@Url.Content("~/Downloads/CSS Animtation.rar")" >here</a></p>

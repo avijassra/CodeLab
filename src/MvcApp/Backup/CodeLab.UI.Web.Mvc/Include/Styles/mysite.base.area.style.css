@@ -1,0 +1,46 @@
+/************************************************************************************
+Areas common style
+************************************************************************************/
+div#main
+{
+	margin-top: 10px;
+	border: 2px Solid #EFEFEF;
+	display:inline-block;
+	width:850px;
+}
+
+div#demoLeftNavigation
+{
+	background-color: #EFEFEF;
+	text-align:left;
+	float:left;
+	width: 175px;
+	min-height:450px;
+}
+
+div#demoLeftNavigation ul
+{
+	margin-left:-30px;
+}
+
+div#demoLeftNavigation ul li
+{
+	padding:5px;
+	list-style-type:none;
+	font-weight:bold;
+}
+
+div#demoLeftNavigation ul li a:link,
+div#demoLeftNavigation ul li a:visited,
+div#demoLeftNavigation ul li a:hover,
+div#demoLeftNavigation ul li a:active
+{
+	color:Black;
+	text-decoration:none;
+}
+
+div#container
+{
+	float:right;
+	width:665px;
+}

@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Multi Dimensions";
+    Layout = "~/Areas/Jquery/Views/Shared/_Layout.cshtml";
+}
+
+@section IncludeScripts
+{
+    <script src="@Microsoft.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/Include/Cache/Effects.MultiDimensions.Scripts")" type="text/javascript"></script>
+}
+
+<h2>Multi Dimensions</h2>
+
+<div id="container" style="background-color: White;">
+    <div id="multiDimensions" >
+        <div id="jassraCont" class="imgContainer" data-direction="true" data-speed="1" >
+            <img id="imgJassra" src="@Url.Content("~/Areas/Jquery/Include/Images/3dEffect/jassra.png")" style="position:absolute;z-index:5;" alt="" />
+        </div>
+        <div id="monikaCont" class="imgContainer" data-direction="true" data-speed=".5" >
+            <img id="imgMonika" src="@Url.Content("~/Areas/Jquery/Include/Images/3dEffect/monika.png")" style="position:absolute;z-index:4;" alt="" />
+        </div>
+        <div id="aviCont" class="imgContainer" data-direction="false" data-speed=".75" >
+            <img id="imgAvi" src="@Url.Content("~/Areas/Jquery/Include/Images/3dEffect/avi.png")" style="position:absolute;z-index:3;" alt="" />
+        </div>
+        <div id="anshCont" class="imgContainer" data-direction="false" data-speed="2" >
+            <img id="imgAnsh" src="@Url.Content("~/Areas/Jquery/Include/Images/3dEffect/ansh.png")" style="position:absolute;z-index:2;" alt="" />
+        </div>
+        <div id="aayanCont" class="imgContainer" data-direction="true" data-speed="1.5" >
+            <img id="imgAayan" src="@Url.Content("~/Areas/Jquery/Include/Images/3dEffect/aayan.png")" style="position:absolute;z-index:1;" alt="" />
+        </div>
+    </div>
+</div>

@@ -1,0 +1,450 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6BB8F0E7-232A-41D6-A82B-6EE03E8E4EF7}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CodeLab.UI.Web.Mvc</RootNamespace>
+    <AssemblyName>CodeLab.UI.Web.Mvc</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.2.1.505.0\lib\NET35\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.2.1.505.0\lib\NET35\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Optimization, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Optimization.0.1\lib\net40\Microsoft.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Json, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\System.Json.4.0.20126.16343\lib\net40\System.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\System.Net.Http.2.0.20126.16343\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\System.Net.Http.Formatting.4.0.20126.16343\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\System.Net.Http.2.0.20126.16343\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\AspNetWebPages.Core.2.0.20126.16343\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\AspNetWebApi.Core.4.0.20126.16343\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Common, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\System.Web.Http.Common.4.0.20126.16343\lib\net40\System.Web.Http.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\AspNetWebApi.4.0.20126.16343\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\AspNetMvc.4.0.20126.16343\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\AspNetRazor.Core.2.0.20126.16343\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\AspNetWebPages.Core.2.0.20126.16343\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\AspNetWebPages.Core.2.0.20126.16343\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\AspNetWebPages.Core.2.0.20126.16343\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Areas\Html5\Controllers\CssAnimationController.cs" />
+    <Compile Include="Areas\Html5\Controllers\GeolocationController.cs" />
+    <Compile Include="Areas\Html5\Controllers\ServerSentEvents\AdminController.cs" />
+    <Compile Include="Areas\Html5\Controllers\ServerSentEvents\UserController.cs" />
+    <Compile Include="Areas\Html5\Controllers\WebStorageController.cs" />
+    <Compile Include="Areas\Html5\Html5AreaRegistration.cs" />
+    <Compile Include="Areas\Html5\ViewModels\ServerSentEvent\LoggedUsersViewModel.cs" />
+    <Compile Include="Areas\Html5\ViewModels\ServerSentEvent\UserViewModel.cs" />
+    <Compile Include="Areas\Jquery\Controllers\EffectsController.cs" />
+    <Compile Include="Areas\Jquery\Controllers\ImageMoverController.cs" />
+    <Compile Include="Areas\Jquery\Controllers\ImagePlusifyController.cs" />
+    <Compile Include="Areas\Jquery\Controllers\ImageRandomizerController.cs" />
+    <Compile Include="Areas\Jquery\Controllers\ImageRotatorController.cs" />
+    <Compile Include="Areas\Jquery\Controllers\StopwatchController.cs" />
+    <Compile Include="Areas\Jquery\JqueryAreaRegistration.cs" />
+    <Compile Include="Areas\Jquery\ViewModels\ImagePlusifyViewModel.cs" />
+    <Compile Include="Areas\Jquery\ViewModels\ImageRotatorViewModel.cs" />
+    <Compile Include="Controllers\DemoStartPageController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\VideoController.cs" />
+    <Compile Include="Core\Common\Enums\CommitType.cs" />
+    <Compile Include="Core\Common\Enums\SessionKey.cs" />
+    <Compile Include="Core\Extensions\SessionExtension.cs" />
+    <Compile Include="Core\Mvc\Action\AjaxResponse.cs" />
+    <Compile Include="Core\Mvc\Action\JsonResponseActionResult.cs" />
+    <Compile Include="Core\Mvc\Action\RefreshOptions.cs" />
+    <Compile Include="Core\Mvc\Action\UserServerSentStatusResult.cs" />
+    <Compile Include="Core\Mvc\Base\CustomControllerBase.cs" />
+    <Compile Include="Core\Mvc\Extensions\SessionExtension.cs" />
+    <Compile Include="Core\StartupTasks\Registration\RegisterBundlingAndMinificationFiles.cs" />
+    <Compile Include="Core\StartupTasks\RegisterStartupDependencies.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Template\DemoStartPageController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\HomeController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Html5.AdminController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Html5.CssAnimationController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Html5.GeolocationController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Html5.SharedController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Html5.UserController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Html5.WebStorageController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Jquery.EffectsController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Jquery.ImageMoverController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Jquery.ImagePlusifyController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Jquery.ImageRandomizerController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Jquery.ImageRotatorController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Jquery.SharedController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Jquery.StopwatchController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\SharedController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\T4MVC.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\VideoController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Html5\Include\Images\butterfly.png" />
+    <Content Include="Areas\Html5\Include\Scripts\cssanimation.js" />
+    <Content Include="Areas\Html5\Include\Scripts\geolocation.js" />
+    <Content Include="Areas\Html5\Include\Scripts\serversentevents.admin.js" />
+    <Content Include="Areas\Html5\Include\Scripts\serversentevents.user.js" />
+    <Content Include="Areas\Html5\Include\Scripts\webstorage.js" />
+    <Content Include="Areas\Html5\Include\Styles\mysite.html5.css" />
+    <Content Include="Areas\Html5\Include\Styles\mysite.html5.cssanimation.css" />
+    <Content Include="Areas\Jquery\Include\Images\3dEffect\aayan.png" />
+    <Content Include="Areas\Jquery\Include\Images\3dEffect\ansh.png" />
+    <Content Include="Areas\Jquery\Include\Images\3dEffect\avi.png" />
+    <Content Include="Areas\Jquery\Include\Images\3dEffect\jassra.png" />
+    <Content Include="Areas\Jquery\Include\Images\3dEffect\monika.png" />
+    <Content Include="Areas\Jquery\Include\Images\HighWycombe\DSC_0250.JPG" />
+    <Content Include="Areas\Jquery\Include\Images\HighWycombe\DSC_0251.JPG" />
+    <Content Include="Areas\Jquery\Include\Images\HighWycombe\DSC_0255.JPG" />
+    <Content Include="Areas\Jquery\Include\Images\HighWycombe\DSC_0261.JPG" />
+    <Content Include="Areas\Jquery\Include\Images\HighWycombe\DSC_0262.JPG" />
+    <Content Include="Areas\Jquery\Include\Images\LasVegas\DSC_0829.JPG" />
+    <Content Include="Areas\Jquery\Include\Images\LasVegas\DSC_0830.JPG" />
+    <Content Include="Areas\Jquery\Include\Images\LasVegas\DSC_0943.JPG" />
+    <Content Include="Areas\Jquery\Include\Images\LasVegas\DSC_0960.JPG" />
+    <Content Include="Areas\Jquery\Include\Images\LasVegas\DSC_0961.JPG" />
+    <Content Include="Areas\Jquery\Include\Images\LasVegas\DSC_0962.JPG" />
+    <Content Include="Areas\Jquery\Include\Images\LasVegas\DSC_0963.JPG" />
+    <Content Include="Areas\Jquery\Include\Images\LasVegas\DSC_0998.JPG" />
+    <Content Include="Areas\Jquery\Include\Images\Malibu\DSC_1111.JPG" />
+    <Content Include="Areas\Jquery\Include\Images\Malibu\DSC_1118.JPG" />
+    <Content Include="Areas\Jquery\Include\Images\Malibu\DSC_1119.JPG" />
+    <Content Include="Areas\Jquery\Include\Images\Malibu\DSC_1122.JPG" />
+    <Content Include="Areas\Jquery\Include\Images\Malibu\DSC_1124.JPG" />
+    <Content Include="Areas\Jquery\Include\Images\Malibu\DSC_1140.JPG" />
+    <Content Include="Areas\Jquery\Include\Images\Malibu\DSC_1148.JPG" />
+    <Content Include="Areas\Jquery\Include\Images\Malibu\DSC_1165.JPG" />
+    <Content Include="Areas\Jquery\Include\Images\Malibu\DSC_1180.JPG" />
+    <Content Include="Areas\Jquery\Include\Images\Malibu\DSC_1184.JPG" />
+    <Content Include="Areas\Jquery\Include\Images\Malibu\DSC_1184_wide.JPG" />
+    <Content Include="Areas\Jquery\Include\Images\Scotland\DSCF1533.JPG" />
+    <Content Include="Areas\Jquery\Include\Images\Scotland\DSC_0337.JPG" />
+    <Content Include="Areas\Jquery\Include\Images\Scotland\DSC_0381.JPG" />
+    <Content Include="Areas\Jquery\Include\Images\Scotland\DSC_0432.JPG" />
+    <Content Include="Areas\Jquery\Include\Images\Scotland\DSC_0461.JPG" />
+    <Content Include="Areas\Jquery\Include\Images\Scotland\DSC_0473.JPG" />
+    <Content Include="Areas\Jquery\Include\Images\Scotland\DSC_0480.JPG" />
+    <Content Include="Areas\Jquery\Include\Images\Scotland\DSC_0488.JPG" />
+    <Content Include="Areas\Jquery\Include\Scripts\clock.js" />
+    <Content Include="Areas\Jquery\Include\Scripts\effects.CssAnimation.js" />
+    <Content Include="Areas\Jquery\Include\Scripts\effects.MultiDimensions.js" />
+    <Content Include="Areas\Jquery\Include\Scripts\imageMover.js" />
+    <Content Include="Areas\Jquery\Include\Scripts\imagePlusify.js" />
+    <Content Include="Areas\Jquery\Include\Scripts\imageRandomizer.js" />
+    <Content Include="Areas\Jquery\Include\Scripts\imageRotator.js" />
+    <Content Include="Areas\Jquery\Include\Scripts\imageRotator.tryit.js" />
+    <Content Include="Areas\Jquery\Include\Scripts\Plugins\jquery.clock-0.1.js" />
+    <Content Include="Areas\Jquery\Include\Scripts\Plugins\jquery.imageBackgroundMover-1.0.js" />
+    <Content Include="Areas\Jquery\Include\Scripts\Plugins\jquery.imagePlusify-2.1.js" />
+    <Content Include="Areas\Jquery\Include\Scripts\Plugins\jquery.imageRandomizer-1.0.js" />
+    <Content Include="Areas\Jquery\Include\Scripts\Plugins\jquery.imageRotator-1.5.js" />
+    <Content Include="Areas\Jquery\Include\Styles\mysite.jquery.css" />
+    <Content Include="Areas\Jquery\Include\Styles\mysite.jquery.sample.css" />
+    <Content Include="Downloads\CSS Animtation\default.html" />
+    <Content Include="Downloads\CSS Animtation\Images\DSCF1533.JPG" />
+    <Content Include="Downloads\CSS Animtation\Images\DSC_0381.JPG" />
+    <Content Include="Downloads\CSS Animtation\Images\DSC_0480.JPG" />
+    <Content Include="Downloads\CSS Animtation\Scripts\cssanimation.samples.js" />
+    <Content Include="Downloads\CSS Animtation\Scripts\jquery-1.7.1.min.js" />
+    <Content Include="Downloads\CSS Animtation\Styles\cssanimation.samples.css" />
+    <Content Include="Downloads\CSS Animtation\Styles\global.css" />
+    <Content Include="Downloads\jquery.imagePlusify-2\jquery.imagePlusify-2.0.js" />
+    <Content Include="Downloads\jquery.imagePlusify-2\jquery.imagePlusify-2.0.min.js" />
+    <Content Include="Downloads\jquery.imagePlusify-2\ReadMe.txt" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Include\Images\background.png" />
+    <Content Include="Include\Images\fhbg.gif" />
+    <Content Include="Include\Images\Jquery\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Include\Images\Jquery\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Include\Images\Jquery\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Include\Images\Jquery\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Include\Images\Jquery\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Include\Images\Jquery\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Include\Images\Jquery\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Include\Images\Jquery\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Include\Images\Jquery\ui-icons_222222_256x240.png" />
+    <Content Include="Include\Images\Jquery\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Include\Images\Jquery\ui-icons_454545_256x240.png" />
+    <Content Include="Include\Images\Jquery\ui-icons_888888_256x240.png" />
+    <Content Include="Include\Images\Jquery\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Include\Images\logo.avijassra.png" />
+    <Content Include="Include\Scripts\AppCore\common.js" />
+    <Content Include="Include\Scripts\AppCore\mysite.address.js" />
+    <Content Include="Include\Scripts\AppCore\mysite.ajax.js" />
+    <Content Include="Include\Scripts\AppCore\mysite.forms.js" />
+    <Content Include="Include\Scripts\AppCore\mysite.shared.js" />
+    <Content Include="Include\Scripts\Html\modernizr-2.0.6-development-only.js" />
+    <Content Include="Include\Scripts\Jquery\jquery-1.7.1-vsdoc.js" />
+    <Content Include="Include\Scripts\Jquery\jquery-1.7.1.js" />
+    <Content Include="Include\Scripts\Jquery\jquery-1.7.1.min.js" />
+    <Content Include="Include\Scripts\Jquery\jquery-ui-1.8.11.js" />
+    <Content Include="Include\Scripts\Jquery\jquery-ui-1.8.11.min.js" />
+    <Content Include="Include\Scripts\Jquery\jquery.ba-bbq.min.js" />
+    <Content Include="Include\Scripts\Jquery\jquery.blockUI.js" />
+    <Content Include="Include\Scripts\Jquery\jquery.metadata.js" />
+    <Content Include="Include\Scripts\Jquery\jquery.unobtrusive-ajax.js" />
+    <Content Include="Include\Scripts\Jquery\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Include\Scripts\Jquery\jquery.validate-vsdoc.js" />
+    <Content Include="Include\Scripts\Jquery\jquery.validate.js" />
+    <Content Include="Include\Scripts\Jquery\jquery.validate.min.js" />
+    <Content Include="Include\Scripts\Jquery\jquery.validate.unobtrusive.js" />
+    <Content Include="Include\Scripts\Jquery\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Include\Scripts\ThirdParty\Json\json.js" />
+    <Content Include="Include\Scripts\ThirdParty\Json\json2.js" />
+    <Content Include="Include\Scripts\ThirdParty\Json\json_parse.js" />
+    <Content Include="Include\Scripts\ThirdParty\Json\json_parse_state.js" />
+    <Content Include="Include\Scripts\ThirdParty\Knockout\knockout-1.3.0beta.debug.js" />
+    <Content Include="Include\Scripts\ThirdParty\Knockout\knockout-1.3.0beta.js" />
+    <Content Include="Include\Styles\mvc.standard.css" />
+    <Content Include="Include\Styles\mysite.base.area.style.css" />
+    <Content Include="Include\Styles\mysite.base.style.color.css" />
+    <Content Include="Include\Styles\mysite.base.style.css" />
+    <Content Include="Include\Styles\mysite.input.css" />
+    <Content Include="Include\Styles\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Include\Styles\themes\base\jquery.ui.all.css" />
+    <Content Include="Include\Styles\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Include\Styles\themes\base\jquery.ui.base.css" />
+    <Content Include="Include\Styles\themes\base\jquery.ui.button.css" />
+    <Content Include="Include\Styles\themes\base\jquery.ui.core.css" />
+    <Content Include="Include\Styles\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Include\Styles\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Include\Styles\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Include\Styles\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Include\Styles\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Include\Styles\themes\base\jquery.ui.slider.css" />
+    <Content Include="Include\Styles\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Include\Styles\themes\base\jquery.ui.theme.css" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="ViewModels\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Html5\Views\Admin\Index.cshtml" />
+    <Content Include="Areas\Html5\Views\CssAnimation\Index.cshtml" />
+    <Content Include="Areas\Html5\Views\Geolocation\Index.cshtml" />
+    <Content Include="Areas\Html5\Views\Shared\LeftNavigation.cshtml" />
+    <Content Include="Areas\Html5\Views\Shared\TopMenu.cshtml" />
+    <Content Include="Areas\Html5\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Html5\Views\User\Index.cshtml" />
+    <Content Include="Areas\Html5\Views\Web.config" />
+    <Content Include="Areas\Html5\Views\WebStorage\Index.cshtml" />
+    <Content Include="Areas\Jquery\Views\Effects\MultiDimensions.cshtml" />
+    <Content Include="Areas\Jquery\Views\ImageMover\Index.cshtml" />
+    <Content Include="Areas\Jquery\Views\ImagePlusify\Index.cshtml" />
+    <Content Include="Areas\Jquery\Views\ImageRandomizer\Index.cshtml" />
+    <Content Include="Areas\Jquery\Views\ImageRotator\Index.cshtml" />
+    <Content Include="Areas\Jquery\Views\ImageRotator\TryIt.cshtml" />
+    <Content Include="Areas\Jquery\Views\Shared\LeftNavigation.cshtml" />
+    <Content Include="Areas\Jquery\Views\Shared\TopMenu.cshtml" />
+    <Content Include="Areas\Jquery\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Jquery\Views\Shared\_SampleLayout.cshtml" />
+    <Content Include="Areas\Jquery\Views\Stopwatch\Index.cshtml" />
+    <Content Include="Areas\Jquery\Views\Web.config" />
+    <None Include="Downloads\CSS Animtation.rar" />
+    <None Include="Downloads\jquery.imagePlusify-1.0.rar" />
+    <None Include="Downloads\jquery.imagePlusify-2.0.rar" />
+    <None Include="Downloads\jquery.imagePlusify-2.1.rar" />
+    <None Include="Downloads\jquery.imageRotator-1.1.rar" />
+    <None Include="Downloads\jquery.imageRotator-1.3.rar" />
+    <None Include="Downloads\jquery.imageRotator-1.4.rar" />
+    <Content Include="packages.config" />
+    <Content Include="Views\DemoStartPage\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\TopMenu.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Video\Index.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <None Include="Template\T4MVC.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>T4MVC.cs</LastGenOutput>
+    </None>
+    <None Include="Template\T4MVC.tt.settings.t4" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MvcBase.WebHelper\MvcBase.WebHelper.csproj">
+      <Project>{17218C45-816A-418C-B169-791A44AF96EE}</Project>
+      <Name>MvcBase.WebHelper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>33588</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

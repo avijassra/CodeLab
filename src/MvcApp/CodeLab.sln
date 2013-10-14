@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeLab.UI.Web.Mvc", "CodeLab.UI.Web.Mvc\CodeLab.UI.Web.Mvc.csproj", "{6BB8F0E7-232A-41D6-A82B-6EE03E8E4EF7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeLab.UI.Web.Mvc.Tests", "CodeLab.UI.Web.Mvc.Tests\CodeLab.UI.Web.Mvc.Tests.csproj", "{32F293CB-ED08-4892-ACBF-16956A74BE6A}"
