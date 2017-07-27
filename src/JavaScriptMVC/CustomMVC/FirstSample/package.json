@@ -1,0 +1,16 @@
+{
+  "name": "jquery Event based app",
+  "version": "0.0.1",
+  "description": "Starter application using Angular 2 and ASP.NET Core",
+  "scripts": {
+    "start": "server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.3"
+  },
+  "devDependencies": {},
+  "repository": {}
+}
